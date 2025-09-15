@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Add New Post";
+}
+
+<div class="text-center">
+    <h1>Add New Post</h1>
+</div>
+<hr/>
+<form class ="col-1">
+        <label>Name</label>
+        <input type="text" />
+        <label>Species</label>
+        <input type="text" />
+        <label>Age</label>
+        <input type="number" />
+        <label>Gender</label>
+        <input type="text" />
+        <label>Description</label>
+        <input type="text" />
+        <label></label>
+        @using (Html.BeginForm("FileUpload", "Home", FormMethod.Post,
+        new { enctype = "multipart/form-data" }))
+        {
+            <label for="file">Upload Image:</label>
+            <input type="file" name="file" id="file" style="width: 100%;" />
+            <input type="submit" value="Upload" class="submit" />
+        }
+</form>
