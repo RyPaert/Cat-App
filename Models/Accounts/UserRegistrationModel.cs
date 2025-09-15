@@ -16,6 +16,7 @@ namespace Catblog.Models.Accounts
 
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "the Passwords do not match!")]
+        [Required(ErrorMessage = "Password confirmation is required!")]
         public string ConfirmPassword { get; set; }
 
     }
