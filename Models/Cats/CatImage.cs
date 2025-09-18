@@ -13,6 +13,6 @@ namespace Catblog.Models.Cats
         public string? Image {  get; set; }
         [Required]
         public string? FileLoaction { get; set; }
-        public Guid CatId { get; set; }
+        public Guid? CatId { get; set; }
     }
 }

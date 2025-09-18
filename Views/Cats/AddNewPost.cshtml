@@ -2,27 +2,30 @@
     ViewData["Title"] = "Add New Post";
 }
 
+@model Catblog.Models.Cats.Cat
+
 <div class="text-center">
     <h1>Add New Post</h1>
 </div>
 <hr/>
-<form class ="col-1">
+<div id="AddNewPostForm">
+    <form>
         <label>Name</label>
-        <input type="text" />
+        <input type="text" asp-for="Name" class="form-control" placeholder="Max"/>
         <label>Species</label>
-        <input type="text" />
+        <input type="text" asp-for="Species" class="form-control" placeholder="Siiami kass" />
         <label>Age</label>
-        <input type="number" />
+        <input type="number" asp-for="Age" class="form-control" placeholder="3"/>
         <label>Gender</label>
-        <input type="text" />
+        <input type="text" asp-for="Gender" class="form-control" placeholder="Male"/>
         <label>Description</label>
-        <input type="text" />
-        <label></label>
+        <textarea type="text" asp-for="Description" class="form-control" placeholder="Enter you post description"></textarea>
         @using (Html.BeginForm("FileUpload", "Home", FormMethod.Post,
         new { enctype = "multipart/form-data" }))
         {
             <label for="file">Upload Image:</label>
-            <input type="file" name="file" id="file" style="width: 100%;" />
-            <input type="submit" value="Upload" class="submit" />
-        }
-</form>
+            <input type="file" name="file" id="file" style="width: 100%;"/>
+            <a asp-controller="Cats" asp-action="AddNewPost" type="submit" class=" btn btn-danger">Post</a>
+        }     
+    </form>
+</div>

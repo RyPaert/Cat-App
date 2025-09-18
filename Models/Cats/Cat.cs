@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.Models.Cats
 {
@@ -13,7 +14,6 @@ namespace Catblog.Models.Cats
         public int Age { get; set; }
         [Required]
         public string? Gender { get; set; }
-        [Required]
         public List<CatImage> Image { get; set; } = new List<CatImage>();
         [Required]
         public string? Description { get; set; }
