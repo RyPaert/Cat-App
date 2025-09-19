@@ -1,11 +1,52 @@
-﻿@{
+﻿@model IEnumerable<Catblog.Models.Cats.Cat>
+@{
     ViewData["Title"] = "Home Page";
 }
-
-@model IEnumerable<Catblog.Models.Cats.Cat>
+@{
+    int rowNumber = 1;
+    int currentRow = 1;
+    int currentTile = 1;
+    int tilesInRow = 6;
+}
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <hr />
 </div>
-
+<form method="post">
+    <table class="table table-hover">
+        <tbody>
+            @foreach (var cat in Model)
+            {
+            <td>
+                @* <a asp-action="details" asp-controller="Films" asp-route-id="@movie.FilmID" class="btn_for_users"> *@
+                    <table class="HIT">
+                        <tr><td colspan="2">@cat.Title</td></tr>
+                        <tr>
+                            <td colspan="2">
+                                    @if (cat.Image == null || !cat.Image.Any())
+                                    {
+                                    <img src="~/lib/appset/image/Q.jpg" alt="Default Image" class="card-img-top" />
+                                    }
+                                    else
+                                    {
+                                        @foreach (var Image in cat.Image)
+                                        {
+                                        <partial name="_ImageIndex" model="Image" />
+                                        }
+                                    }
+                            </td>
+                        </tr>
+                        <tr><td>@cat.Description</td></tr>
+                    </table>
+                @* </a> *@
+            </td>
+                rowNumber++;
+                if (rowNumber % 4 == 0)
+                {
+                <tr></tr>
+                }
+            }
+        </tbody>
+    </table>
+</form>

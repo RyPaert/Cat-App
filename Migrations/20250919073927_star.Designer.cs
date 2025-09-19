@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catblog.Migrations
 {
     [DbContext(typeof(CatblogDb))]
-    [Migration("20250919070223_star2")]
-    partial class star2
+    [Migration("20250919073927_star")]
+    partial class star
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
