@@ -18,6 +18,11 @@ html {
     align-items: center;
 }
 
+#PostForm {
+    border-color: black;
+    border:solid;
+}
+
 html {
     position: relative;
     min-height: 100%;

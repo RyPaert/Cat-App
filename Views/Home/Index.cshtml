@@ -20,10 +20,10 @@
             {
             <td>
                 @* <a asp-action="details" asp-controller="Films" asp-route-id="@movie.FilmID" class="btn_for_users"> *@
-                    <table class="HIT">
+                <table id="PostForm">
                         <tr><td colspan="2">@cat.Title</td></tr>
                         <tr>
-                            <td colspan="2">
+                        <td colspan="2" id="PostForm">
                                     @if (cat.Image == null || !cat.Image.Any())
                                     {
                                     <img src="~/lib/appset/image/Q.jpg" alt="Default Image" class="card-img-top" />
