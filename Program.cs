@@ -1,3 +1,8 @@
+using System.Reflection;
+using Catblog.Controllers.Accounts;
+using Catblog.Models.Accounts;
+using Microsoft.AspNetCore.Identity;
+
 namespace Catblog
 {
     public class Program
@@ -8,6 +13,12 @@ namespace Catblog
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddIdentity<User, IdentityRole>(opt =>
+            {
+                opt.Password.RequiredLength = 7;
+                opt.Password.RequireDigit = false;
+                opt.Password.RequireUppercase = false;
+            });
 
             var app = builder.Build();
 
