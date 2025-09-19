@@ -1,9 +1,43 @@
-﻿@model IEnumerable<Catblog.Models.KittysAdmin.AdminKittyCreate>
+﻿@model Catblog.Models.KittysAdmin.AdminKittyCreate
 
 <div class="h1">Create Cat</div>
 
-<div>
-	<form method="post" enctype="multipart/form-data">
-		
-	</form>
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="AdminCatName" class="control-label">Cat name</label>
+				<input asp-for="AdminCatName" class="form-control" />
+				<span asp-validation-for="AdminCatName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AdminCatSpecies" class="control-label">Cat species</label>
+				<input asp-for="AdminCatSpecies" class="form-control" />
+				<span asp-validation-for="AdminCatSpecies" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AdminCatAge" class="control-label">Cat age</label>
+				<input asp-for="AdminCatAge" class="form-control" />
+				<span asp-validation-for="AdminCatAge" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AdminCatGender" class="control-label">Cat gender</label>
+				<input asp-for="AdminCatGender" class="form-control" />
+				<span asp-validation-for="AdminCatGender" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AdminCatDescription" class="control-label">Cat description</label>
+				<input asp-for="AdminCatDescription" class="form-control" />
+				<span asp-validation-for="AdminCatDescription" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-outline-dark" />
+			</div>
+		</form>
+	</div>
+	<div>
+		<a asp-action="Index" class="btn btn-danger">Back</a>
+	</div>
+
 </div>
