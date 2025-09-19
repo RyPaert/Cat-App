@@ -1,4 +1,4 @@
-﻿using Catblog.Models.Cats;
+﻿using Catblog.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.Data
@@ -10,5 +10,6 @@ namespace Catblog.Data
 
         }
         public DbSet<Cat> Cats { get; set; }
+        public DbSet<FileToDatabase> FileToDatabase { get; set; }
     }
 }

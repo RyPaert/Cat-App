@@ -11,8 +11,6 @@ namespace Catblog.Models.Cats
         public byte[]? ImageData { get; set; }
         [Required]
         public string? Image {  get; set; }
-        [Required]
-        public string? FileLoaction { get; set; }
         public Guid? CatId { get; set; }
     }
 }

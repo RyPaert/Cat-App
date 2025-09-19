@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.EntityFrameworkCore;
+﻿using Catblog.Models.Cats;
+using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Models.Cats
+namespace Catblog.Domain
 {
     public class Cat
     {
@@ -14,14 +14,11 @@ namespace Catblog.Models.Cats
         public int Age { get; set; }
         [Required]
         public string? Gender { get; set; }
-        public List<IFormFile> Files { get; set; }
-        public List<CatImage> Image { get; set; } = new List<CatImage>();
         [Required]
         public string? Description { get; set; }
         [Required]
         public string? Title { get; set; }
 
         public decimal Rate { get; set; }
-
     }
 }

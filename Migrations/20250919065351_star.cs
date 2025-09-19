@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Catblog.Migrations
 {
     /// <inheritdoc />
-    public partial class Start : Migration
+    public partial class star : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,6 +27,20 @@ namespace Catblog.Migrations
                 {
                     table.PrimaryKey("PK_Cats", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "FileToDatabase",
+                columns: table => new
+                {
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ImageTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageData = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    CatId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FileToDatabase", x => x.ID);
+                });
         }
 
         /// <inheritdoc />
@@ -34,6 +48,9 @@ namespace Catblog.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Cats");
+
+            migrationBuilder.DropTable(
+                name: "FileToDatabase");
         }
     }
 }

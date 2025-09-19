@@ -1,4 +1,6 @@
 using Catblog.Data;
+using Catblog.ServiceInterface;
+using Catblog.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catblog
@@ -11,6 +13,8 @@ namespace Catblog
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ICatServices, CatServices>();
+            builder.Services.AddScoped<IFileServices, FileServices>();
             builder.Services.AddDbContext<CatblogDb>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
