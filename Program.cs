@@ -1,7 +1,11 @@
 using System.Reflection;
 using Catblog.Controllers.Accounts;
+using Catblog.Data;
 using Catblog.Models.Accounts;
+using Microsoft.EntityFrameworkCore;
+using Catblog.Data;
 using Microsoft.AspNetCore.Identity;
+using Catblog.Dto;
 
 namespace Catblog
 {
@@ -11,16 +15,24 @@ namespace Catblog
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+			// Add services to the container.
+			builder.Services.AddDbContext<CatblogDb>(options =>
+	        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+			builder.Services.AddControllersWithViews();
             builder.Services.AddIdentity<User, IdentityRole>(opt =>
             {
-                opt.Password.RequiredLength = 7;
+                opt.User.AllowedUserNameCharacters = string.Empty;
+
+                opt.Password.RequiredLength = 0;
                 opt.Password.RequireDigit = false;
                 opt.Password.RequireUppercase = false;
-            });
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<CatblogDb>()
+            .AddDefaultTokenProviders();
 
-            var app = builder.Build();
+			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
