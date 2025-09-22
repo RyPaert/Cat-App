@@ -19,7 +19,7 @@ namespace Catblog.Dto
         [Required]
         public string? Title { get; set; }
 
-        public decimal Rate { get; set; }
+        public int Like { get; set; }
         public List<IFormFile> Files { get; set; }
         public IEnumerable<FileToDatabaseDto> Image { get; set; } = new List<FileToDatabaseDto>();
     }

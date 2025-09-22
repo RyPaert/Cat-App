@@ -3,6 +3,7 @@ using Catblog.Dto;
 using Catblog.Models.Cats;
 using Catblog.ServiceInterface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.Controllers
 {
@@ -57,6 +58,40 @@ namespace Catblog.Controllers
             }
 
             return RedirectToAction("Index", "Home", model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> PostDetails(Guid id)
+        {
+            var cat = await _catServices.PostDetailsAsync(id);
+
+            if (cat == null)
+            {
+                return NotFound();
+            }
+
+            var images = await _context.FileToDatabase
+                .Where(t => t.CatId == id)
+                .Select(y => new CatImage
+                {
+                    CatId = y.ID,
+                    ImageId = y.ID,
+                    ImageData = y.ImageData,
+                    ImageTitle = y.ImageTitle,
+                    Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData))
+                }).ToArrayAsync();
+
+            var vm = new Cat();
+            vm.Id = cat.Id;
+            vm.Name = cat.Name;
+            vm.Age = cat.Age;
+            vm.Description = cat.Description;
+            vm.Like = cat.Like;
+            vm.Gender = cat.Gender;
+            vm.Species = cat.Species;
+            vm.Title = cat.Title;
+            vm.Image.AddRange(images);
+
+            return View(vm);
         }
     }
 }

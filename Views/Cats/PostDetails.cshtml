@@ -1,0 +1,19 @@
+﻿@model Catblog.Models.Cats.Cat
+<div style="font-size: 1.5rem;">
+    <h1 style="text-align: center;">@Html.DisplayFor(model => model.Title)</h1>
+    <div>
+        <hr />
+        <div>
+            <dl class="row">
+                <div class="form-group row" id="PostDetails">
+                    <div style="word-wrap: break-word; word-break: break-word; white-space: normal;">
+                        @Html.DisplayFor(model => model.Title)<br />
+                        @Html.DisplayFor(model => model.Description)<br />
+                        @Html.DisplayFor(model => model.Like)<br />
+                    </div>
+                </div>
+            </dl>
+            <a asp-action="Index" asp-controller="home" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+</div>

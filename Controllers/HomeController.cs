@@ -20,7 +20,7 @@ namespace Catblog.Controllers
         public IActionResult Index()
         {
             var resultingInventory = _context.Cats
-                .OrderByDescending(y => y.Rate)
+                .OrderByDescending(y => y.Like)
                 .Select(x => new Cat
                 {
                     Id = x.Id,
@@ -30,7 +30,7 @@ namespace Catblog.Controllers
                     Gender = x.Gender,
                     Age = x.Age,
                     Species = x.Species,
-                    Rate = x.Rate,
+                    Like = x.Like,
                     Image = (List<CatImage>)_context.FileToDatabase
                        .Where(t => t.CatId == x.Id)
                        .Select(z => new CatImage

@@ -3,6 +3,7 @@ using Catblog.Data;
 using Catblog.Domain;
 using Catblog.Dto;
 using Catblog.ServiceInterface;
+using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.Services
 {
@@ -15,6 +16,12 @@ namespace Catblog.Services
         { 
             _context = context;
             _fileServices = fileServices;
+        }
+        public async Task<Cat> PostDetailsAsync(Guid id)
+        {
+            var result = await _context.Cats
+                .FirstOrDefaultAsync(x => x.Id == id);
+            return result;
         }
         public async Task<Cat> AddNewPost(CatDto dto)
         {

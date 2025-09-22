@@ -21,7 +21,7 @@ namespace Catblog.Models.Cats
         [Required]
         public string? Title { get; set; }
 
-        public decimal Rate { get; set; }
+        public int Like { get; set; }
 
     }
 }

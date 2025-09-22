@@ -13,17 +13,17 @@
     <h1 class="display-4">Welcome</h1>
     <hr />
 </div>
-<form method="post">
-    <table class="table table-hover">
+<form method="post" id="PostForm">
+    <table class="table">
         <tbody>
             @foreach (var cat in Model)
             {
             <td>
-                @* <a asp-action="details" asp-controller="Films" asp-route-id="@movie.FilmID" class="btn_for_users"> *@
-                <table id="PostForm">
+                <a asp-action="PostDetails" asp-controller="Cats" asp-route-id="@cat.Id" class="btn_for_users">
+                <table id="Post">
                         <tr><td colspan="2">@cat.Title</td></tr>
                         <tr>
-                        <td colspan="2" id="PostForm">
+                        <td colspan="2">
                                     @if (cat.Image == null || !cat.Image.Any())
                                     {
                                     <img src="~/lib/appset/image/Q.jpg" alt="Default Image" class="card-img-top" />
@@ -32,17 +32,19 @@
                                     {
                                         @foreach (var Image in cat.Image)
                                         {
-                                        <partial name="_ImageIndex" model="Image" />
+                                           <partial name="_ImageIndex" model="Image" />                                     
                                         }
                                     }
                             </td>
                         </tr>
-                        <tr><td>@cat.Description</td></tr>
+                        <tr>
+                            <td style ="word-wrap: break-word; word-break: break-word; white-space: normal;">@cat.Description</td>
+                        </tr>
                     </table>
-                @* </a> *@
+                </a>
             </td>
                 rowNumber++;
-                if (rowNumber % 4 == 0)
+                if (rowNumber % 1 == 0)
                 {
                 <tr></tr>
                 }
