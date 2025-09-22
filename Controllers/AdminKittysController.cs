@@ -17,11 +17,11 @@ namespace Catblog.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AdminCatId, AdminCatName, AdminCatSpecies, AdminCatGender, AdminCatDescription")]AdminKittyCreate adminKittys)
-        {
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("AdminCatId, AdminCatName, AdminCatSpecies, AdminCatGender, AdminCatDescription")]AdminKittyCreate adminKittys)
+        //{
             
-        }
+        //}
     }
 }
