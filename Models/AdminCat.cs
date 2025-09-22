@@ -1,14 +1,15 @@
-﻿namespace Catblog.Models.KittysAdmin
+﻿namespace Catblog.Models
 {
-    public class AdminKittyCreate
+    public class AdminCat
     {
-        public int AdminCatId {  get; set; }
+        public int AdminCatId { get; set; }
         public string AdminCatName { get; set; }
         public string AdminCatSpecies { get; set; }
         public int AdminCatAge { get; set; }
         public string AdminCatGender { get; set; }
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
-        public AdminKittyCreate adminKittyCreate { get; set; }
+        public AdminCat adminCat { get; set; }
+        
     }
 }
