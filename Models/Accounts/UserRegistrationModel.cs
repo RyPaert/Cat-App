@@ -5,7 +5,7 @@ namespace Catblog.Models.Accounts
     public class UserRegistrationModel
     {
         [Required(ErrorMessage = "Username is required!")]
-		public string Username { get; set; }
+		public string UserName { get; set; }
 
         [Required(ErrorMessage = "a Password is required!")]
         [DataType(DataType.Password)]

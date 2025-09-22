@@ -25,8 +25,11 @@ namespace Catblog.Controllers.Accounts
             {
                 var user = new User
                 {
-                    Username = model.Username,
+                    UserName = model.UserName,
                     Email = model.Email,
+                    Password = model.Password,
+                    PasswordConfirmed = model.ConfirmPassword
+                    
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
