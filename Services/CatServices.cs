@@ -44,5 +44,14 @@ namespace Catblog.Services
 
             return cat;
         }
+        public async Task<Cat> Delete(Guid id)
+        {
+            var result = await _context.Cats
+                .FirstOrDefaultAsync(x => x.Id == id);
+            _context.Cats.Remove(result);
+            await _context.SaveChangesAsync();
+
+            return result;
+        }
     }
 }

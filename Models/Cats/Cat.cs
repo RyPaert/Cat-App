@@ -22,6 +22,7 @@ namespace Catblog.Models.Cats
         public string? Title { get; set; }
 
         public int Like { get; set; }
+        public ICollection<UserComment> Comments { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Catblog.Domain;
+﻿using System.Diagnostics.Metrics;
+using Catblog.Domain;
 using Catblog.Dto;
 
 namespace Catblog.ServiceInterface
@@ -7,5 +8,6 @@ namespace Catblog.ServiceInterface
     {
         Task<Cat> AddNewPost(CatDto dto);
         Task<Cat> PostDetailsAsync(Guid id);
+        Task<Cat> Delete(Guid id);
     }
 }

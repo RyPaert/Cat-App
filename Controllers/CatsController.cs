@@ -93,5 +93,14 @@ namespace Catblog.Controllers
 
             return View(vm);
         }
+        public async Task<IActionResult> DeleteConfirmation(Guid id)
+        {
+            if (id == Guid.Empty) { return BadRequest("Invalid ID"); }
+            var filmToDelete = await _catServices.Delete(id);
+
+            if (filmToDelete == null) { return RedirectToAction("Index", "Home"); }
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

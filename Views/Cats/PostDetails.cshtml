@@ -13,7 +13,11 @@
                     </div>
                 </div>
             </dl>
-            <a asp-action="Index" asp-controller="home" class="btn btn-secondary">Back</a>
+            <form asp-action="DeleteConfirmation">
+                <input type="hidden" asp-for="Id" name="id" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Back</a>
+            </form>
         </div>
     </div>
 </div>

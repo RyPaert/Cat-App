@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catblog.Migrations
 {
     [DbContext(typeof(CatblogDb))]
-    [Migration("20250922071408_like")]
-    partial class like
+    [Migration("20250925061423_start")]
+    partial class start
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
