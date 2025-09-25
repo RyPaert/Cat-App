@@ -1,3 +1,53 @@
-﻿@model Catblog.Models.AdminCat
+﻿@model IEnumerable<Catblog.Models.AdminCat>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Õpilase Index</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(Model => Model.AdminCatName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.AdminCatSpecies)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.AdminCatAge)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.AdminCatGender)
+			</th>
+			<th>
+				@Html.DisplayNameFor(Model => Model.AdminCatDescription)
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.AdminCatName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AdminCatSpecies)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AdminCatAge)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AdminCatGender)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AdminCatDescription)
+				</td>
+			</tr>
+		}
+		
+	</tbody>
+</table>
 
 
