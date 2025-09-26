@@ -42,11 +42,46 @@ html {
     width: 50%;
 }
 
+#container {
+    display: flex;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+.aboutus {
+    background: #CCC;
+    width: 80%;
+}
+
+.Catinfo {
+    background: #DDD;
+    width: 20%;
+}
+
+.DescriptionArea {
+    height: 30%;
+}
+
+.CommentArea {
+    height: 50%;
+}
+
+.AddCommentArea {
+    height: 15%;
+}
+.AddCommentArea textarea{
+    width:100%;
+    height: 80%;
+}
+.LikeArea{
+    height: 5%;
+}
+
 html {
     position: relative;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
