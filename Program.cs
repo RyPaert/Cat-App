@@ -1,3 +1,7 @@
+using Catblog.Data;
+using Microsoft.EntityFrameworkCore;
+
+
 namespace Catblog
 {
     public class Program
@@ -8,6 +12,8 @@ namespace Catblog
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AdminCatContext>(
+                options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 

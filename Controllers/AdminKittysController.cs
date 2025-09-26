@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Catblog.Models;
 using Catblog.Data;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Catblog.Controllers
@@ -14,7 +16,7 @@ namespace Catblog.Controllers
             _catContext = catContext;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }
@@ -24,9 +26,10 @@ namespace Catblog.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AdminCatId, AdminCatName, AdminCatSpecies, AdminCatGender, AdminCatDescription")]AdminCat adminCat)
+        public async Task<IActionResult> Create([Bind("AdminCatId, AdminCatName, AdminCatSpecies, AdminCatAge,AdminCatGender, AdminCatDescription")]AdminCat adminCat)
         {
             if(ModelState.IsValid)
             {

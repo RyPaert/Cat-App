@@ -31,9 +31,11 @@
 				<input asp-for="AdminCatDescription" class="form-control" />
 				<span asp-validation-for="AdminCatDescription" class="text-danger"></span>
 			</div>
-			<div class="form-group">
-				<input type="submit" value="Create" class="btn btn-outline-dark" />
-			</div>
+			@{
+				var breakpoint = "";
+			}
+			<input asp-action="Create" asp-controller="AdminKittys" type="submit"
+			class="btn btn-primary form-text" value="Create " />
 		</form>
 	</div>
 	<div>

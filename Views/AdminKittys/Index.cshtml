@@ -1,53 +1,38 @@
 ﻿@model IEnumerable<Catblog.Models.AdminCat>
 
 @{
-	ViewData["Title"] = "Index";
+	int rowNumber = 1;
 }
+<div><a asp-action="Create" asp-controller="Kittys" class="btn btn-primary">Create a new kittys</a></div>
 
-<h1>Õpilase Index</h1>
-<table class="table">
-	<thead>
-		<tr>
-			<th>
-				@Html.DisplayNameFor(Model => Model.AdminCatName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(Model => Model.AdminCatSpecies)
-			</th>
-			<th>
-				@Html.DisplayNameFor(Model => Model.AdminCatAge)
-			</th>
-			<th>
-				@Html.DisplayNameFor(Model => Model.AdminCatGender)
-			</th>
-			<th>
-				@Html.DisplayNameFor(Model => Model.AdminCatDescription)
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model)
-		{
+<div class="h1">Your Kittys:</div>
+<form method="post">
+	<table class="table table-hover">
+		<thead>
 			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.AdminCatName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.AdminCatSpecies)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.AdminCatAge)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.AdminCatGender)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.AdminCatDescription)
-				</td>
+				<th scope="col">#</th>
+				<th scope="col">AdminCatName</th>
+				<th scope="col">AdminCatSpecies</th>
+				<th scope="col">AdminCatAge</th>
+				<th scope="col">AdminCatGender</th>
+				<th scope="col">AdminCatDescription</th>
 			</tr>
-		}
-		
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			@foreach(var kitty in Model)
+			{
+				<tr>
+					
+					<td>@rowNumber</td>
+					<td>@kitty.AdminCatName</td>
+					<td>@kitty.AdminCatSpecies</td>
+					<td>@kitty.AdminCatAge</td>
+					<td>@kitty.AdminCatGender</td>
+					<td>@kitty.AdminCatDescription</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</form>
 
 
