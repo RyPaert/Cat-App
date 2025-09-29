@@ -89,6 +89,7 @@ namespace Catblog.Controllers
             vm.Gender = cat.Gender;
             vm.Species = cat.Species;
             vm.Title = cat.Title;
+            vm.Like = cat.Like;
             vm.Image.AddRange(images);
 
             return View(vm);

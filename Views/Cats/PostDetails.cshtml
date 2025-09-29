@@ -2,8 +2,10 @@
 
     <div id="container">
         <section class="aboutus">
-            <div>Some content 1</div>
-            <div>Some more 1</div>
+            @foreach (var image in Model.Image)
+            {
+                <partial name="_ImageIndex" model="image" style="max-width: 100vh;" />
+            }
         </section>
 
         <section class="Catinfo">
@@ -21,9 +23,10 @@
                 <button class="btn btn-secondary" style="width: 30%">Add</button>
             </section>
             <section class="LikeArea">
-                <a asp-controller="home" asp-action="index">
+                <a asp-controller="Cats" asp-action="Like">
                     <img src="~/lib/image/like_Icone2.svg" style="height: 30px; width: 30px; margin-top: 18px ">
                 </a>
+                @Html.DisplayFor(model => model.Like)
             </section>
         </section>
     </div>      
