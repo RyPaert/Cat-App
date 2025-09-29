@@ -20,3 +20,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+/*REGISTER PAGE*/ 
+
+.regButton {
+    background-color: rgb(0, 177, 255);
+    border-radius: 3px;
+    font-size:25px;
+    border-color: transparent;
+    color:white;
+}
+.register-background {
+    box-shadow: 10px 10px 100px #c4bdbc;
+    border-radius: 5px;
+    height: 450px
+}
+
+/*REGISTER PAGE*/
