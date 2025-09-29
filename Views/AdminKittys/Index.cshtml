@@ -1,9 +1,9 @@
-﻿@model IEnumerable<Catblog.Models.AdminCat>
+﻿@model Catblog.Models.AdminCat
 
 @{
 	int rowNumber = 1;
 }
-<div><a asp-action="Create" asp-controller="Kittys" class="btn btn-primary">Create a new kittys</a></div>
+
 
 <div class="h1">Your Kittys:</div>
 <form method="post">
@@ -19,18 +19,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach(var kitty in Model)
-			{
-				<tr>
-					
-					<td>@rowNumber</td>
-					<td>@kitty.AdminCatName</td>
-					<td>@kitty.AdminCatSpecies</td>
-					<td>@kitty.AdminCatAge</td>
-					<td>@kitty.AdminCatGender</td>
-					<td>@kitty.AdminCatDescription</td>
-				</tr>
-			}
+		
 		</tbody>
 	</table>
 </form>

@@ -24,22 +24,37 @@ namespace Catblog.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            AdminCat vm = new();
+            return View("Create",vm);
         }
 
-        [HttpPost]
+        [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AdminCatId, AdminCatName, AdminCatSpecies, AdminCatAge,AdminCatGender, AdminCatDescription")]AdminCat adminCat)
+        public async Task<IActionResult> Create(AdminCat vm)
         {
-            if(ModelState.IsValid)
+            var dto = new KittyadminDto
             {
-                _catContext.adminCats.Add(adminCat);
-                await _catContext.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                AdminCatName = vm.AdminCatName,
+                AdminCatSpecies = vm.AdminCatSpecies,
+                AdminCatAge = vm.AdminCatAge,
+                AdminCatGender = vm.AdminCatGender,
+                AdminCatDescription = vm.AdminCatDescription,
+                //File = vm.File,
+                //Image = vm.Image.Select(x => new FilesToDatabaseDto)
+                //{
 
-            }
-            return View(adminCat);
+                //}
+                //    var result = await _kittyServices.Create(dto);
+
+
+                //if (result == null)
+                //{
+                //    return RedirectToAction("Index");
+                //}
+                //return RedirectToAction("Index", vm);
+            };
         }
 
-    }
+    };
 }
+
