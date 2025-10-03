@@ -4,7 +4,7 @@ namespace Catblog.Domain
 {
     public class Kitty
     {
-        public int AdminCatId { get; set; }
+        public Guid Id { get; set; }
         public string AdminCatName { get; set; }
         public string AdminCatSpecies { get; set; }
         public int AdminCatAge { get; set; }

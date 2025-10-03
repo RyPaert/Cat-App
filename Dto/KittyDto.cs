@@ -12,6 +12,11 @@ namespace Catblog.Dto
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
         public AdminCat adminCat { get; set; }
+
+        public List<IFormFile> AdminCatFiles { get; set; }
+        public IEnumerable<FileToDatabaseDto> Image {  get; set; } = new List<FileToDatabaseDto>();
+
+
     }
     
 
