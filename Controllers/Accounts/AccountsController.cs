@@ -10,6 +10,7 @@ namespace Catblog.Controllers.Accounts
     public class AccountsController : Controller
     {
         private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
         public AccountsController(UserManager<User> userManager)
         {
             _userManager = userManager;
@@ -78,6 +79,14 @@ namespace Catblog.Controllers.Accounts
                 ModelState.AddModelError("", "Invalid username or password");
                 return View();
             }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
     }
 }
