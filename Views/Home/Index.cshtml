@@ -17,10 +17,10 @@
             {
             <td>
                 <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
-                <table id="Post">
+                    <table id="Post">
                         <tr><td colspan="2">@post.Title</td></tr>
                         <tr>
-                        <td colspan="2">
+                            <td colspan="2">
                                     @if (post.Image == null || !post.Image.Any())
                                     {
                                     <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
@@ -29,7 +29,7 @@
                                     {
                                         @foreach (var Image in post.Image)
                                         {
-                                           <partial name="_ImageIndex" model="Image" />                                     
+                                        <partial name="_ImageIndex" model="Image" />
                                         }
                                     }
                             </td>
@@ -46,6 +46,6 @@
                 <tr></tr>
                 }
             }
-        </tbody>
+        </tbody>           
     </table>
 </form>
