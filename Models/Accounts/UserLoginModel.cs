@@ -18,5 +18,8 @@ namespace Catblog.Models.Accounts
         [Compare("Password", ErrorMessage = "the Passwords do not match!")]
         [Required(ErrorMessage = "Password confirmation is required!")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name  = "Remember me")]
+        public bool RememberMe { get; set; }
     }
 }
