@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Models.Cats
+namespace Catblog.Models.Post
 {
-    public class CatImage
+    public class PostImage
     {
         public Guid ImageId { get; set; }
         [Required]
@@ -10,7 +10,7 @@ namespace Catblog.Models.Cats
         [Required]
         public byte[]? ImageData { get; set; }
         [Required]
-        public string? Image {  get; set; }
-        public Guid? CatId { get; set; }
+        public string? Image { get; set; }
+        public Guid? PostId { get; set; }
     }
 }

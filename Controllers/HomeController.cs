@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Catblog.Data;
 using Catblog.Models;
-using Catblog.Models.Cats;
+using Catblog.Models.Post;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catblog.Controllers
@@ -19,9 +19,9 @@ namespace Catblog.Controllers
 
         public IActionResult Index()
         {
-            var resultingInventory = _context.Cats
+            var resultingInventory = _context.Posts
                 .OrderByDescending(y => y.Like)
-                .Select(x => new Cat
+                .Select(x => new Post
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -31,11 +31,11 @@ namespace Catblog.Controllers
                     Age = x.Age,
                     Species = x.Species,
                     Like = x.Like,
-                    Image = (List<CatImage>)_context.FileToDatabase
-                       .Where(t => t.CatId == x.Id)
-                       .Select(z => new CatImage
+                    Image = (List<PostImage>)_context.FileToDatabase
+                       .Where(t => t.PostId == x.Id)
+                       .Select(z => new PostImage
                        {
-                           CatId = z.ID,
+                           PostId = z.ID,
                            ImageId = z.ID,
                            ImageData = z.ImageData,
                            ImageTitle = z.ImageTitle,

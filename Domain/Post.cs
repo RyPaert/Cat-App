@@ -1,9 +1,8 @@
-﻿using Catblog.Models.Cats;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Dto
+namespace Catblog.Domain
 {
-    public class CatDto
+    public class Post
     {
         public Guid Id { get; set; }
         [Required]
@@ -20,7 +19,5 @@ namespace Catblog.Dto
         public string? Title { get; set; }
 
         public int Like { get; set; }
-        public List<IFormFile> Files { get; set; }
-        public IEnumerable<FileToDatabaseDto> Image { get; set; } = new List<FileToDatabaseDto>();
     }
 }

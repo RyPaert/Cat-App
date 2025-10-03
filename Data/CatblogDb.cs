@@ -9,7 +9,7 @@ namespace Catblog.Data
         {
 
         }
-        public DbSet<Cat> Cats { get; set; }
+        public DbSet<Post> Posts { get; set; }
         public DbSet<FileToDatabase> FileToDatabase { get; set; }
     }
 }

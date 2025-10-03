@@ -13,7 +13,7 @@ namespace Catblog
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<ICatServices, CatServices>();
+            builder.Services.AddScoped<IPostServices, PostServices>();
             builder.Services.AddScoped<IFileServices, FileServices>();
             builder.Services.AddDbContext<CatblogDb>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

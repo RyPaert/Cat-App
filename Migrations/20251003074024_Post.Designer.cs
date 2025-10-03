@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catblog.Migrations
 {
     [DbContext(typeof(CatblogDb))]
-    [Migration("20250925061423_start")]
-    partial class start
+    [Migration("20251003074024_Post")]
+    partial class Post
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,29 @@ namespace Catblog.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Catblog.Domain.Cat", b =>
+            modelBuilder.Entity("Catblog.Domain.FileToDatabase", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("ImageData")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("FileToDatabase");
+                });
+
+            modelBuilder.Entity("Catblog.Domain.Post", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,29 +81,7 @@ namespace Catblog.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cats");
-                });
-
-            modelBuilder.Entity("Catblog.Domain.FileToDatabase", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("CatId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<byte[]>("ImageData")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("ImageTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("FileToDatabase");
+                    b.ToTable("Posts");
                 });
 #pragma warning restore 612, 618
         }

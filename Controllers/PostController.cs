@@ -1,38 +1,36 @@
 ﻿using Catblog.Data;
 using Catblog.Dto;
-using Catblog.Models.Cats;
+using Catblog.Models.Post;
 using Catblog.ServiceInterface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.Controllers
 {
-    public class CatsController : Controller
+    public class PostController : Controller
     {
         private readonly CatblogDb _context;
-        private readonly ICatServices _catServices;
+        private readonly IPostServices _postServices;
         private readonly IFileServices _fileServices;
-        public CatsController(CatblogDb context, ICatServices catServices, IFileServices fileServices) 
-        { 
+
+        public PostController(CatblogDb context, IPostServices postServices, IFileServices fileServices)
+        {
             _context = context;
+            _postServices = postServices;
             _fileServices = fileServices;
-            _catServices = catServices;
         }
-        public IActionResult Index()
-        {
-            return View("AddNewPost");
-        }
+
         [HttpGet]
-        public IActionResult AddNewPost() 
+        public IActionResult AddNewPost()
         {
-            Cat model = new();
+            Post model = new();
             return View("AddNewPost", model);
         }
         [HttpPost, ActionName("AddNewPost")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddNewPost(Cat model)
+        public async Task<IActionResult> AddNewPost(Post model)
         {
-            var dto = new CatDto()
+            var dto = new PostDto()
             {
                 Name = model.Name,
                 Age = model.Age,
@@ -47,14 +45,14 @@ namespace Catblog.Controllers
                     ID = x.ImageId,
                     ImageData = x.ImageData,
                     ImageTitle = x.ImageTitle,
-                    CatId = x.CatId,
+                    PostId = x.PostId,
                 }).ToArray()
             };
-            var result = await _catServices.AddNewPost(dto);
+            var result = await _postServices.AddNewPost(dto);
 
             if (result == null)
             {
-                return RedirectToAction("Index" , "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             return RedirectToAction("Index", "Home", model);
@@ -62,34 +60,34 @@ namespace Catblog.Controllers
         [HttpGet]
         public async Task<IActionResult> PostDetails(Guid id)
         {
-            var cat = await _catServices.PostDetailsAsync(id);
+            var post = await _postServices.PostDetailsAsync(id);
 
-            if (cat == null)
+            if (post == null)
             {
                 return NotFound();
             }
 
             var images = await _context.FileToDatabase
-                .Where(t => t.CatId == id)
-                .Select(y => new CatImage
+                .Where(t => t.PostId == id)
+                .Select(y => new PostImage
                 {
-                    CatId = y.ID,
+                    PostId = y.ID,
                     ImageId = y.ID,
                     ImageData = y.ImageData,
                     ImageTitle = y.ImageTitle,
                     Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(y.ImageData))
                 }).ToArrayAsync();
 
-            var vm = new Cat();
-            vm.Id = cat.Id;
-            vm.Name = cat.Name;
-            vm.Age = cat.Age;
-            vm.Description = cat.Description;
-            vm.Like = cat.Like;
-            vm.Gender = cat.Gender;
-            vm.Species = cat.Species;
-            vm.Title = cat.Title;
-            vm.Like = cat.Like;
+            var vm = new Post();
+            vm.Id = post.Id;
+            vm.Name = post.Name;
+            vm.Age = post.Age;
+            vm.Description = post.Description;
+            vm.Like = post.Like;
+            vm.Gender = post.Gender;
+            vm.Species = post.Species;
+            vm.Title = post.Title;
+            vm.Like = post.Like;
             vm.Image.AddRange(images);
 
             return View(vm);
@@ -97,7 +95,7 @@ namespace Catblog.Controllers
         public async Task<IActionResult> DeleteConfirmation(Guid id)
         {
             if (id == Guid.Empty) { return BadRequest("Invalid ID"); }
-            var filmToDelete = await _catServices.Delete(id);
+            var filmToDelete = await _postServices.Delete(id);
 
             if (filmToDelete == null) { return RedirectToAction("Index", "Home"); }
 

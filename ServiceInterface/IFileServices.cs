@@ -6,7 +6,7 @@ namespace Catblog.ServiceInterface
 {
     public interface IFileServices
     {
-        void UploadFilesToDatabase(CatDto dto, Cat domain);
+        void UploadFilesToDatabase(PostDto dto, Post domain);
         Task<FileToDatabase> RemoveImageFromDatabase(FileToDatabaseDto dto);
     }
 }

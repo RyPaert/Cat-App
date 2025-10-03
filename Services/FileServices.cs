@@ -11,11 +11,12 @@ namespace Catblog.Services
     {
         private readonly IHostEnvironment _webHost;
         private readonly CatblogDb _context;
-        public FileServices(CatblogDb context)
+        public FileServices(CatblogDb context, IHostEnvironment webHost)
         { 
             _context = context; 
+            _webHost = webHost;
         }
-        public void UploadFilesToDatabase(CatDto dto, Cat domain)
+        public void UploadFilesToDatabase(PostDto dto, Post domain)
         {
             if (dto.Files != null && dto.Files.Count > 0)
             {
@@ -27,7 +28,7 @@ namespace Catblog.Services
                         {
                             ID = Guid.NewGuid(),
                             ImageTitle = image.FileName,
-                            CatId = domain.Id
+                            PostId = domain.Id
                         };
 
                         image.CopyTo(target);

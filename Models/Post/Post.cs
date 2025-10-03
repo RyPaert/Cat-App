@@ -1,9 +1,9 @@
-﻿using Catblog.Models.Cats;
+﻿using Catblog.Models.Post;
 using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Domain
+namespace Catblog.Models.Post
 {
-    public class Cat
+    public class Post
     {
         public Guid Id { get; set; }
         [Required]
@@ -14,11 +14,14 @@ namespace Catblog.Domain
         public int Age { get; set; }
         [Required]
         public string? Gender { get; set; }
+        public List<IFormFile>? Files { get; set; }
+        public List<PostImage> Image { get; set; } = new List<PostImage>();
         [Required]
         public string? Description { get; set; }
         [Required]
         public string? Title { get; set; }
 
         public int Like { get; set; }
+        public ICollection<UserComment>? Comments { get; set; }
     }
 }

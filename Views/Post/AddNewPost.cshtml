@@ -2,7 +2,7 @@
     ViewData["Title"] = "Add New Post";
 }
 
-@model Catblog.Models.Cats.Cat
+@model Catblog.Models.Post.Post
 
 <div class="text-center">
     <h1>Add New Post</h1>
@@ -33,10 +33,7 @@
                 </div>
             </div>
         </div>
-        @{
-            var breakpoint = "";
-        }
-        <input asp-action="AddNewPost" asp-controller="Cats" type="submit"
+        <input asp-action="AddNewPost" asp-controller="Post" type="submit"
                class="btn btn-primary" value="Post" />
         <a asp-controller="Home" asp-action="index" class="btn btn-primary">Cancel</a>
     </form>
