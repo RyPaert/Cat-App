@@ -61,7 +61,7 @@ namespace Catblog.Controllers.Accounts
                 return View(userModel);
             }
 
-            var user = await _userManager.FindByEmailAsync(userModel.Email);
+            var user = await _userManager.FindByNameAsync(userModel.UserName);
             if (user != null &&
                 await _userManager.CheckPasswordAsync(user, userModel.Password))
             {
