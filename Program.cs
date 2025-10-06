@@ -24,11 +24,11 @@ namespace Catblog
             {
                 opt.User.AllowedUserNameCharacters = string.Empty;
 
-                opt.Password.RequiredLength = 0;
-                opt.Password.RequireDigit = false;
-                opt.Password.RequireUppercase = false;
-                opt.Password.RequireLowercase = false;
-                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequiredLength = 0; // Set to 8
+                opt.Password.RequireDigit = false; // Set to True
+                opt.Password.RequireUppercase = false; // Set to True
+                opt.Password.RequireLowercase = false; // Set to True
+                opt.Password.RequireNonAlphanumeric = false; // Set to True
             }).AddEntityFrameworkStores<CatblogDb>()
             .AddDefaultTokenProviders();
 
