@@ -22,6 +22,6 @@ namespace Catblog.Models.Post
         public string? Title { get; set; }
 
         public int Like { get; set; }
-        public ICollection<UserComment>? Comments { get; set; }
+        public ICollection<Comment>? Comments { get; set; }
     }
 }
