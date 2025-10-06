@@ -11,9 +11,10 @@ namespace Catblog.Controllers.Accounts
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        public AccountsController(UserManager<User> userManager)
+        public AccountsController(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
         [HttpGet]
         public IActionResult Register()
