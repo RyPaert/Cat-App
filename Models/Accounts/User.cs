@@ -12,5 +12,6 @@ namespace Catblog.Models.Accounts
         public string Password { get; set; }
         [Required]
         public string PasswordConfirmed { get; set; }
+        public bool isAdmin { get; set; } = false;
     }
 }
