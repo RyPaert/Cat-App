@@ -3,9 +3,10 @@ using Catblog.Controllers.Accounts;
 using Catblog.Data;
 using Catblog.Models.Accounts;
 using Microsoft.EntityFrameworkCore;
-using Catblog.Data;
 using Microsoft.AspNetCore.Identity;
 using Catblog.Dto;
+using Catblog.ServiceInterface;
+using Catblog.Services;
 
 namespace Catblog
 {
@@ -18,6 +19,10 @@ namespace Catblog
 			// Add services to the container.
 			builder.Services.AddDbContext<CatblogDb>(options =>
 	        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<IPostServices, PostServices>();
+            builder.Services.AddScoped<IFileServices, FileServices>();
 
 			builder.Services.AddControllersWithViews();
             builder.Services.AddIdentity<User, IdentityRole>(opt =>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Add New Post";
+}
+
+@model Catblog.Models.Post.Post
+
+<div class="text-center">
+    <h1>Add New Post</h1>
+</div>
+<hr/>
+<div id="AddNewPostForm">
+    <form method="post" asp-action="AddNewPost" enctype="multipart/form-data">
+        <label>Name</label>
+        <input type="text" asp-for="Name" class="form-control" placeholder="Max"/>
+        <label>Species</label>
+        <input type="text" asp-for="Species" class="form-control" placeholder="Siiami kass" />
+        <label>Age</label>
+        <input type="number" asp-for="Age" class="form-control" placeholder="3"/>
+        <label>Gender</label>
+        <input type="text" asp-for="Gender" class="form-control" placeholder="Male"/>
+        <label>Title</label>
+        <input type="text" asp-for="Title" class="form-control" placeholder="My cut cat" />
+        <label>Description</label>
+        <textarea type="text" asp-for="Description" class="form-control" placeholder="Enter you post description"></textarea>
+        <div class="form-group-row">
+            <label asp-for="Files" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <div class="custom-file">
+                    <input class="form-control custom-file-input"
+                           asp-for="Files"
+                           multiple type="file" />
+                    <label class="custom-file-label">Choose Images from device -></label>
+                </div>
+            </div>
+        </div>
+        <input asp-action="AddNewPost" asp-controller="Post" type="submit"
+               class="btn btn-primary" value="Post" />
+        <a asp-controller="Home" asp-action="index" class="btn btn-primary">Cancel</a>
+    </form>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileLabel = $(this).next('.custom-file-input');
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    fileLabel.html(files.length + ' files selected');
+                }
+                else if (files.length == 1) {
+                    fileLabel.html(files[0].name);
+                }
+            });
+        });
+    </script>
+}

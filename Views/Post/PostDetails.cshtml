@@ -1,0 +1,39 @@
+﻿@model Catblog.Models.Post.Post
+
+<div id="container">
+    <section class="aboutus">
+        @foreach (var image in Model.Image)
+        {
+            @if (image.Image == null || !image.Image.Any())
+            {
+                <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
+            }
+            else
+            {
+                <partial name="_ImageIndex" model="image" style="max-width: 100vh;" />
+            }            
+        }
+    </section>
+
+        <section class="Catinfo">
+            <section class="DescriptionArea">
+            @Html.DisplayFor(Model => Model.Title)
+            <div>@Html.DisplayFor(model => model.Description)</div>
+            </section>
+            <section class="CommentArea">
+                <div>Some content 2</div>
+                <div>Some more 2</div>
+                <div>Some more 2</div>
+            </section> 
+            <section class="AddCommentArea">
+                <textarea></textarea><br />
+                <button class="btn btn-secondary" style="width: 30%">Add</button>
+            </section>
+            <section class="LikeArea">
+                <a asp-controller="Post" asp-action="Like">
+                    <img src="~/lib/image/like_Icone2.svg" style="height: 30px; width: 30px; margin-top: 18px ">
+                </a>
+                @Html.DisplayFor(model => model.Like)
+            </section>
+        </section>
+    </div>      
