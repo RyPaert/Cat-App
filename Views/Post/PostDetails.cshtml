@@ -1,11 +1,18 @@
 ﻿@model Catblog.Models.Post.Post
 
-    <div id="container">
-        <section class="aboutus">
-            @foreach (var image in Model.Image)
+<div id="container">
+    <section class="aboutus">
+        @foreach (var image in Model.Image)
+        {
+            @if (image.Image == null || !image.Image.Any())
+            {
+                <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
+            }
+            else
             {
                 <partial name="_ImageIndex" model="image" style="max-width: 100vh;" />
-            }
+            }            
+        }
         </section>
 
         <section class="Catinfo">

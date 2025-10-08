@@ -14,7 +14,9 @@ namespace Catblog.Models.Post
         public int Age { get; set; }
         [Required]
         public string? Gender { get; set; }
+        [Required]
         public List<IFormFile>? Files { get; set; }
+        [Required]
         public List<PostImage> Image { get; set; } = new List<PostImage>();
         [Required]
         public string? Description { get; set; }
