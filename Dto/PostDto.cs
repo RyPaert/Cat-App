@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Catblog.Models.Accounts;
 
 namespace Catblog.Dto
 {
@@ -17,7 +18,7 @@ namespace Catblog.Dto
         public string? Description { get; set; }
         [Required]
         public string? Title { get; set; }
-
+        public User? User { get; set; }
         public int Like { get; set; }
         [Required]
         public List<IFormFile>? Files { get; set; }

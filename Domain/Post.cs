@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Catblog.Models.Accounts;
 
 namespace Catblog.Domain
 {
@@ -19,5 +20,6 @@ namespace Catblog.Domain
         public string? Title { get; set; }
 
         public int Like { get; set; }
+        public User? User { get; set; }
     }
 }

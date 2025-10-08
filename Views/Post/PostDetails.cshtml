@@ -18,6 +18,7 @@
         <section class="Catinfo">
             <section class="DescriptionArea">
             @Html.DisplayFor(Model => Model.Title)
+            @Html.DisplayFor(Model => Model.User.Email)
             <div>@Html.DisplayFor(model => model.Description)</div>
             </section>
             <section class="CommentArea">
