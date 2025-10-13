@@ -1,45 +1,53 @@
 ﻿@model Catblog.Models.AdminCat
 
-<div class="h1">Create Cat</div>
+﻿@{
+    ViewData["Title"] = "Add New Post";
+}
 
-<div class="row">
-	<div class="col-md-4">
-		<form asp-action="Create">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<div class="form-group">
-				<label asp-for="AdminCatName" class="control-label">Cat name</label>
-				<input asp-for="AdminCatName" class="form-control" />
-				<span asp-validation-for="AdminCatName" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="AdminCatSpecies" class="control-label">Cat species</label>
-				<input asp-for="AdminCatSpecies" class="form-control" />
-				<span asp-validation-for="AdminCatSpecies" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="AdminCatAge" class="control-label">Cat age</label>
-				<input asp-for="AdminCatAge" class="form-control" />
-				<span asp-validation-for="AdminCatAge" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="AdminCatGender" class="control-label">Cat gender</label>
-				<input asp-for="AdminCatGender" class="form-control" />
-				<span asp-validation-for="AdminCatGender" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="AdminCatDescription" class="control-label">Cat description</label>
-				<input asp-for="AdminCatDescription" class="form-control" />
-				<span asp-validation-for="AdminCatDescription" class="text-danger"></span>
-			</div>
-			@{
-				var breakpoint = "";
-			}
-			<input asp-action="Create" asp-controller="AdminKittys" type="submit"
-			class="btn btn-primary form-text" value="Create " />
-		</form>
-	</div>
-	<div>
-		<a asp-action="Index" class="btn btn-danger">Back</a>
-	</div>
-
+<div class="text-center">
+    <h1>Add New kitty</h1>
 </div>
+<hr />
+<div>
+    <form method="post" asp-action="Create" enctype="multipart/form-data">
+        <label>Name</label>
+        <input type="text" asp-for="AdminCatName" class="form-control" />
+        <label>Species</label>
+        <input type="text" asp-for="AdminCatSpecies" class="form-control" />
+        <label>Age</label>
+        <input type="number" asp-for="AdminCatAge" class="form-control" />
+        <label>Gender</label>
+        <input type="text" asp-for="AdminCatGender" class="form-control" />
+        <textarea type="text" asp-for="AdminCatDescription" class="form-control"></textarea>
+        <div class="form-group-row">
+            <label asp-for="Files" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-5">
+                <div class="custom-file">
+                    <input class="form-control custom-file-input"
+                           asp-for="Files"
+                           multiple type="file" />
+                    <label class="custom-file-label">Choose Images from device -></label>
+                </div>
+            </div>
+        </div>
+        <input asp-action="Create" asp-controller="AdminKittys" type="submit"
+               class="btn btn-primary" value="Create" />
+        <a asp-controller="Home" asp-action="index" class="btn btn-primary">Cancel</a>
+    </form>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileLabel = $(this).next('.custom-file-input');
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    fileLabel.html(files.length + ' files selected');
+                }
+                else if (files.length == 1) {
+                    fileLabel.html(files[0].name);
+                }
+            });
+        });
+    </script>
+}
