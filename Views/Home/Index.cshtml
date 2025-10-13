@@ -18,7 +18,7 @@
             <td>
                 <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
                     <table id="Post">
-                        <tr><td colspan="2">@post.Title</td></tr>
+                        <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
                         <tr>
                             <td colspan="2">
                                     @if (post.Image == null || !post.Image.Any())
@@ -38,6 +38,12 @@
                             <td style="word-wrap: break-word; word-break: break-word; white-space: normal;">@post.Description</td>
                         </tr>
                     </table>
+                   @*Delete action*@
+                    @if (User.Identity.IsAuthenticated)
+                        {
+                            <h5>Actions:</h5>
+                            <a asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-primary">Delete</a>
+                        }
                 </a>
             </td>
                 rowNumber++;

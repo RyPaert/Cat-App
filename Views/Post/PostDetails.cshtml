@@ -17,7 +17,9 @@
 
         <section class="Catinfo">
             <section class="DescriptionArea">
-            @Html.DisplayFor(Model => Model.Title)
+                <div style="font-weight:bold;">
+                    @Html.DisplayFor(Model => Model.Title)
+                </div>
             @Html.DisplayFor(Model => Model.User.Email)
             <div>@Html.DisplayFor(model => model.Description)</div>
             </section>
