@@ -19,9 +19,9 @@ namespace Catblog.service
         }
         public void UploadFilesToDatabase(KittyDto dto, Kitty kitty)
         {
-            if (dto.AdminCatFiles != null && dto.AdminCatFiles.Count > 0)
+            if (dto.Files != null && dto.Files.Count > 0)
             {
-                foreach (var image in dto.AdminCatFiles)
+                foreach (var image in dto.Files)
                 {
                     using (var target = new MemoryStream())
                     {

@@ -3,6 +3,10 @@ using Catblog.Models;
 using Catblog.Data;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Catblog.Dto;
+using Catblog.Domain;
+using Microsoft.AspNetCore.Components.Web;
+using Catblog.ServiceInterFace;
 
 
 namespace Catblog.Controllers
@@ -10,10 +14,14 @@ namespace Catblog.Controllers
     public class AdminKittysController : Controller
     {
         private readonly AdminCatContext _catContext;
+        private readonly IKittysServices _kittyServices;
+        private readonly IFileServices _fileServices;
 
-        public AdminKittysController(AdminCatContext catContext)
+        public AdminKittysController(AdminCatContext catContext, IKittysServices kittyServices, IFileServices fileServices)
         {
             _catContext = catContext;
+            _kittyServices = kittyServices;
+            _fileServices = fileServices;
         }
 
         public async Task<IActionResult> Index()
@@ -32,27 +40,32 @@ namespace Catblog.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(AdminCat vm)
         {
-            var dto = new KittyadminDto
+            var dto = new KittyDto
             {
                 AdminCatName = vm.AdminCatName,
                 AdminCatSpecies = vm.AdminCatSpecies,
                 AdminCatAge = vm.AdminCatAge,
                 AdminCatGender = vm.AdminCatGender,
                 AdminCatDescription = vm.AdminCatDescription,
-                //File = vm.File,
-                //Image = vm.Image.Select(x => new FilesToDatabaseDto)
-                //{
+                Files = vm.Files,
+                Image = vm.PhotoImages.Select(x => new FileToDatabaseDto
+                {
+                    Id = x.ImageID,
+                    ImageData = x.ImageData,
+                    ImageTitle = x.ImageTitle,
+                    AdminCatID = x.KittyID,
 
-                //}
-                //    var result = await _kittyServices.Create(dto);
-
-
-                //if (result == null)
-                //{
-                //    return RedirectToAction("Index");
-                //}
-                //return RedirectToAction("Index", vm);
+                }).ToArray()
             };
+            var result = await _kittyServices.Create(dto);
+
+
+                if (result == null)
+                {
+                    return RedirectToAction("Index");
+                }
+                return RedirectToAction("Index", vm);
+            
         }
 
     };

@@ -10,6 +10,9 @@
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
         public AdminCat adminCat { get; set; }
-        
+        public List<IFormFile> Files { get; set; }
+        public List<PhotoImage> PhotoImages { get; set; } = new List<PhotoImage>();
+  
+
     }
 }

@@ -18,19 +18,38 @@ namespace Catblog.service
         }
         public async Task<Kitty> DetailsAsync(Guid id)
         {
-            var result = await _catContext.AdminCats
-                .FirstOrDefaultAsync(x => x.AdminCatId == id);
+            var result = await _catContext.Kitties
+                .FirstOrDefaultAsync(x => x.Id == id);
             return result;
         }
-
-        Task<Kitty> IKittysServices.Create(KittyDto dto)
+        public async Task<Kitty> Create(KittyDto dto)
         {
-            throw new NotImplementedException();
+            Kitty kitty = new();
+
+            kitty.Id = Guid.NewGuid();
+            kitty.AdminCatGender = dto.AdminCatGender;
+            kitty.AdminCatDescription = dto.AdminCatDescription;
+            kitty.AdminCatName = dto.AdminCatName;
+            kitty.AdminCatAge = dto.AdminCatAge;
+            kitty.AdminCatSpecies = dto.AdminCatSpecies;
+
+            if (dto.Files != null)
+            {
+                _fileServices.UploadFilesToDatabase(dto, kitty);
+            }
+            await _catContext.Kitties.AddAsync(kitty);
+            await _catContext.SaveChangesAsync();
+
+            return kitty;
         }
-
-        Task<Kitty> IKittysServices.DetailsAsync(Guid id)
+        public async Task<Kitty> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await _catContext.Kitties
+                .FirstOrDefaultAsync(x => x.Id == id);
+            _catContext.Kitties.Remove(result);
+            await _catContext.SaveChangesAsync();
+
+            return result;
         }
     }
 }
