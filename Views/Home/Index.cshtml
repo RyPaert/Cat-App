@@ -15,15 +15,15 @@
         <tbody>
             @foreach (var post in Model)
             {
-            <td>
-                <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
-                    <table id="Post">
-                        <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
-                        <tr>
-                            <td colspan="2">
+                <td>
+                    <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
+                        <table id="Post">
+                            <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
+                            <tr>
+                                <td colspan="2">
                                     @if (post.Image == null || !post.Image.Any())
                                     {
-                                    <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
+                                        <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
                                     }
                                     else
                                     {
@@ -32,19 +32,29 @@
                                             <partial name="_ImageIndex" model="Image" style=""/>
                                         }
                                     }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="word-wrap: break-word; word-break: break-word; white-space: normal;">@post.Description</td>
-                        </tr>
-                    </table>
-                   @*Delete action*@
-                    @if (User.Identity.IsAuthenticated)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="word-wrap: break-word; word-break: break-word; white-space: normal;">@post.Description</td>
+                            </tr>
+                        </table>
+                        @*Delete action*@
+                        @if (User.Identity.IsAuthenticated)
                         {
                             <h5>Actions:</h5>
                             <a asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-primary">Delete</a>
                         }
                 </a>
+                <a onclick="Like();">
+                    <svg src="~/lib/image/like_Icone2.svg" id="svglike" style="height: 30px; width: 30px;margin-top:10px; margin-left:10px;"></svg>
+                </a>
+                <script>
+                    function Like(){
+                        console.log("Mihkel");
+                       const LikeImg = document.getElementById("svglike");
+                       LikeImg.style.fill = "#F54927";
+                    }
+                </script>
             </td>
                 rowNumber++;
                 if (rowNumber % 1 == 0)
