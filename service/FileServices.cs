@@ -1,21 +1,25 @@
 ﻿using Catblog.Data;
 using Catblog.Domain;
 using Catblog.Dto;
+using Catblog.ServiceInterFace;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.service
 {
-    public class FileServices
+    public class FileServices : IFileServices
     {
         private readonly AdminCatContext _context;
         private readonly IHostEnvironment _environment;
+        
 
         public FileServices
             (
-                AdminCatContext context
+                AdminCatContext context,
+                IHostEnvironment hostEnvironment
             )
         {
             _context = context;
+            _environment = hostEnvironment;
         }
         public void UploadFilesToDatabase(KittyDto dto, Kitty kitty)
         {
@@ -39,7 +43,7 @@ namespace Catblog.service
                 }
             }
         }
-        public async Task<FileToDatabase> RemoveImageFromDatabase(FileToDatabaseDto dto)
+        public async Task<FileToDatabase> RemoveImageFromDatabase(FileToDatabase dto)
         {
             var imageID = await _context.FileToDatabase
                 .FirstOrDefaultAsync(x => x.Id == dto.Id);
@@ -53,6 +57,7 @@ namespace Catblog.service
 
             return null;
         }
+
 
     }
 }

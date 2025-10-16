@@ -11,6 +11,6 @@ namespace Catblog.Domain
         public string AdminCatGender { get; set; }
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
-        public AdminCat adminCat { get; set; }
+        //public AdminCat adminCat { get; set; }
     }
 }

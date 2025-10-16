@@ -1,7 +1,10 @@
-﻿namespace Catblog.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Catblog.Models.AdminCat
 {
-    public class PhotoImage
+    public class PhotoImageViewModel
     {
+        [Key]
         public Guid ImageID { get; set; }
         public string ImageTitle { get; set; }
         public byte[] ImageData { get; set; }
