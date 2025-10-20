@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catblog.Migrations
 {
     [DbContext(typeof(CatblogDb))]
-    [Migration("20251020091344_start")]
+    [Migration("20251020141403_start")]
     partial class start
     {
         /// <inheritdoc />

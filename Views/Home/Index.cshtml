@@ -40,14 +40,16 @@
                         </table>
                         @*Like button*@
                         @if (User.Identity.IsAuthenticated)
-                        {       
-                            @*Heart*@
-                            <a id="btn">
-                                <div id="heart"></div>
-                            </a>
+                    {
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                @* Heart Button *@
+                                <a id="btn">
+                                    <div id="heart"></div>
+                                </a>
 
-                            @*Like Count 0*@
-                            <div style="margin-left:100px;" id="like">@post.Like</div>
+                                @* Like Count *@
+                                <div id="like">@post.Like</div>
+                            </div>
 
                             @*Script for like to change color and update count*@
                             <script>
