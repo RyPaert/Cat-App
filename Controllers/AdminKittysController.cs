@@ -45,7 +45,7 @@ namespace Catblog.Controllers
                 AdminCatGender = vm.AdminCatGender,
                 AdminCatDescription = vm.AdminCatDescription,
                 Files = vm.Files,
-                Image = vm.PhotoImages.Select(x => new FileToDatabaseDto
+                Image = vm.kittyImageViewModels.Select(x => new FileToDatabaseDto
                 {
                     Id = x.ImageID,
                     ImageData = x.ImageData,

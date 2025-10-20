@@ -14,6 +14,6 @@ namespace Catblog.Models.Kittys
         public int AdminCatRate { get; set; }
 
         public List<IFormFile>? Files { get; set; }
-        public List<KittyImageViewModel> PhotoImages { get; set; } = new List<KittyImageViewModel>();
+        public List<KittyImageViewModel> kittyImageViewModels { get; set; } = new List<KittyImageViewModel>();
     }
 }
