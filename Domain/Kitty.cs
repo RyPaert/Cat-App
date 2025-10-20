@@ -1,4 +1,4 @@
-﻿using Catblog.Models;
+﻿using Catblog.Models.Kittys;
 
 namespace Catblog.Domain
 {
@@ -11,6 +11,6 @@ namespace Catblog.Domain
         public string AdminCatGender { get; set; }
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
-        //public AdminCat adminCat { get; set; }
+        public KittyCreateViewModel kittyCreateViewModel { get; set; }
     }
 }

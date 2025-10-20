@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Catblog.Models;
 using Catblog.Data;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using Catblog.Dto;
-using Catblog.Domain;
-using Microsoft.AspNetCore.Components.Web;
 using Catblog.ServiceInterFace;
+using Catblog.Models.Kittys;
+
 
 
 namespace Catblog.Controllers
@@ -32,13 +29,13 @@ namespace Catblog.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            AdminCat vm = new();
+            KittyCreateViewModel vm = new();
             return View("Create",vm);
         }
 
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(AdminCat vm)
+        public async Task<IActionResult> Create(KittyCreateViewModel vm)
         {
             var dto = new KittyDto
             {

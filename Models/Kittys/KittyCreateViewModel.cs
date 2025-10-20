@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Models.AdminCat
+namespace Catblog.Models.Kittys
 {
-    public class CreateViewModel
+    public class KittyCreateViewModel
     {
         [Key]
         public Guid AdminCatId { get; set; }
@@ -14,6 +14,6 @@ namespace Catblog.Models.AdminCat
         public int AdminCatRate { get; set; }
 
         public List<IFormFile>? Files { get; set; }
-        public List<PhotoImageViewModel>? PhotoImages { get; set; } = new List<PhotoImageViewModel>();
+        public List<KittyImageViewModel> PhotoImages { get; set; } = new List<KittyImageViewModel>();
     }
 }

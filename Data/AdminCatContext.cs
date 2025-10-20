@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Catblog.Models;
 using Catblog.Domain;
-using Catblog.Dto;
+
 
 namespace Catblog.Data
 {
@@ -10,9 +9,9 @@ namespace Catblog.Data
         public AdminCatContext(DbContextOptions<AdminCatContext> options) : base(options) { }
         public DbSet<Kitty> Kitties { get; set; }
         public DbSet<FileToDatabase> FileToDatabase { get; set; }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<AdminCat>().ToTable("AdminCat");
-        //}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Kitty>().ToTable("Kitty");
+        }
     }
 }
