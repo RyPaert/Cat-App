@@ -40,10 +40,16 @@
                         </table>
                         @*Like button*@
                         @if (User.Identity.IsAuthenticated)
-                        {                       
+                        {       
+                            @*Heart*@
                             <a id="btn">
-                                <div id="heart"></div>  <div id="like">@post.Like</div>
-                            </a>                            
+                                <div id="heart"></div>
+                            </a>
+
+                            @*Like Count 0*@
+                            <div style="margin-left:100px;" id="like">@post.Like</div>
+
+                            @*Script for like to change color and update count*@
                             <script>
                                 let heart = document.getElementById('heart')
                                 let btn = document.getElementById('btn')

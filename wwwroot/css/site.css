@@ -77,12 +77,6 @@ html {
 .LikeArea{
     height: 5%;
 }
-
-#element{
-    height: 50px;
-    width: 50px;
-    text-align:center;
-}
 #heart {
     height: 48px; /* adjust to control the size */
     margin-left: 20px;
