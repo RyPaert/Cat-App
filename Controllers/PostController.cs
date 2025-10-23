@@ -30,7 +30,7 @@ namespace Catblog.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddNewPost(Post model)
         {
-            if (model.Image == null || !model.Image.Any())
+            if (model.Files == null || !model.Files.Any())
             {
                 ViewBag.ErrorMessage = "Palun lisa pilt!";
                 return View(model);
