@@ -21,11 +21,6 @@ namespace Catblog.Controllers
             _fileServices = fileServices;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public IActionResult Create()
         {
@@ -59,7 +54,7 @@ namespace Catblog.Controllers
 
                 if (result == null)
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Home");
                 }
                 return RedirectToAction("Index", vm);
             

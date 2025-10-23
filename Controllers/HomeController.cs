@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Catblog.Data;
 using Catblog.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,10 +8,12 @@ namespace Catblog.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AdminCatContext _catContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AdminCatContext adminCatContext)
         {
             _logger = logger;
+            _catContext = adminCatContext;
         }
 
         public IActionResult Index()
