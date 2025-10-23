@@ -17,20 +17,24 @@
 
         <section class="Catinfo">
             <section class="DescriptionArea">
-                <div style="font-weight:bold;">
-                    @Html.DisplayFor(Model => Model.Title)
+                <div class="post-title">
+                    @Html.DisplayFor(model => model.Title)
                 </div>
-            @Html.DisplayFor(Model => Model.User.Email)
-            <div>@Html.DisplayFor(model => model.Description)</div>
+                <div class="post-description">
+                    @Html.DisplayFor(model => model.Description)
+                </div>
             </section>
             <section class="CommentArea">
-                <div>Some content 2</div>
+                <div>Some more 1</div>
                 <div>Some more 2</div>
-                <div>Some more 2</div>
-            </section> 
+                <div>Some more 3</div>
+                <div>Some more 4</div>
+                <div>Some more 5</div>
+                <div>Some more 6</div>
+            </section>
             <section class="AddCommentArea">
-                <textarea></textarea><br />
-                <button class="btn btn-secondary" style="width: 30%">Add</button>
+                <textarea style="resize: none;"></textarea><br />
+                <button class="btn btn-secondary" style="width: 100%">Add</button>
             </section>
         </section>
     </div>      
