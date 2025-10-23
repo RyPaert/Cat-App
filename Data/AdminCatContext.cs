@@ -12,6 +12,7 @@ namespace Catblog.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Kitty>().ToTable("Kitty");
+            modelBuilder.Entity<FileToDatabase>().ToTable("FileToDatabase");
         }
     }
 }

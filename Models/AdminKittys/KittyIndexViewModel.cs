@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Catblog.Models.Kittys
 {
@@ -12,7 +13,7 @@ namespace Catblog.Models.Kittys
         public string AdminCatGender { get; set; }
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
-
+        [NotMapped]
         public List<IFormFile>? Files { get; set; }
 
         public List<KittyImageViewModel> kittyImageViewModels { get; set; } = new List<KittyImageViewModel>();
