@@ -33,6 +33,12 @@
                 </div>
             </div>
         </div>
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="alert alert-danger">
+                @ViewBag.ErrorMessage
+            </div>
+        }
         <input asp-action="AddNewPost" asp-controller="Post" type="submit"
                class="btn btn-primary" value="Post" />
         <a asp-controller="Home" asp-action="index" class="btn btn-primary">Cancel</a>
