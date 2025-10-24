@@ -52,6 +52,7 @@ html {
 .aboutus {
     background: #CCC;
     width: 80%;
+    overflow-block:auto;
 }
 
 .Catinfo {
