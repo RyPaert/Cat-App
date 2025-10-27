@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catblog.Migrations
 {
     [DbContext(typeof(AdminCatContext))]
-    [Migration("20251023105041_Cat1")]
-    partial class Cat1
+    [Migration("20251027121914_kill me23")]
+    partial class killme23
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,7 @@ namespace Catblog.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FileToDatabase");
+                    b.ToTable("FileToDatabase", (string)null);
                 });
 
             modelBuilder.Entity("Catblog.Domain.Kitty", b =>
@@ -75,19 +75,50 @@ namespace Catblog.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("kittyCreateViewModelAdminCatId")
+                    b.Property<string>("AdminCatTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("createId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("kittyCreateViewModelAdminCatId");
+                    b.HasIndex("createId");
 
                     b.ToTable("Kitty", (string)null);
                 });
 
-            modelBuilder.Entity("Catblog.Models.Kittys.KittyCreateViewModel", b =>
+            modelBuilder.Entity("Catblog.Dto.FileToDatabaseDto", b =>
                 {
-                    b.Property<Guid>("AdminCatId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AdminCatID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CreateId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("ImageData")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreateId");
+
+                    b.ToTable("FileToDatabaseDto");
+                });
+
+            modelBuilder.Entity("Catblog.Models.AdminKittys.Create", b =>
+                {
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -113,12 +144,16 @@ namespace Catblog.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AdminCatId");
+                    b.Property<string>("AdminCatTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("KittyCreateViewModel");
+                    b.HasKey("Id");
+
+                    b.ToTable("Create");
                 });
 
-            modelBuilder.Entity("Catblog.Models.Kittys.KittyImageViewModel", b =>
+            modelBuilder.Entity("Catblog.Models.AdminKittys.Photo", b =>
                 {
                     b.Property<Guid>("ImageID")
                         .ValueGeneratedOnAdd()
@@ -136,40 +171,49 @@ namespace Catblog.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("KittyCreateViewModelAdminCatId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid?>("KittyID")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ImageID");
 
-                    b.HasIndex("KittyCreateViewModelAdminCatId");
+                    b.HasIndex("KittyID");
 
-                    b.ToTable("KittyImageViewModel");
+                    b.ToTable("Photo");
                 });
 
             modelBuilder.Entity("Catblog.Domain.Kitty", b =>
                 {
-                    b.HasOne("Catblog.Models.Kittys.KittyCreateViewModel", "kittyCreateViewModel")
+                    b.HasOne("Catblog.Models.AdminKittys.Create", "create")
                         .WithMany()
-                        .HasForeignKey("kittyCreateViewModelAdminCatId")
+                        .HasForeignKey("createId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("kittyCreateViewModel");
+                    b.Navigation("create");
                 });
 
-            modelBuilder.Entity("Catblog.Models.Kittys.KittyImageViewModel", b =>
+            modelBuilder.Entity("Catblog.Dto.FileToDatabaseDto", b =>
                 {
-                    b.HasOne("Catblog.Models.Kittys.KittyCreateViewModel", null)
-                        .WithMany("kittyImageViewModels")
-                        .HasForeignKey("KittyCreateViewModelAdminCatId");
+                    b.HasOne("Catblog.Models.AdminKittys.Create", null)
+                        .WithMany("Image")
+                        .HasForeignKey("CreateId");
                 });
 
-            modelBuilder.Entity("Catblog.Models.Kittys.KittyCreateViewModel", b =>
+            modelBuilder.Entity("Catblog.Models.AdminKittys.Photo", b =>
                 {
-                    b.Navigation("kittyImageViewModels");
+                    b.HasOne("Catblog.Domain.Kitty", null)
+                        .WithMany("Image")
+                        .HasForeignKey("KittyID");
+                });
+
+            modelBuilder.Entity("Catblog.Domain.Kitty", b =>
+                {
+                    b.Navigation("Image");
+                });
+
+            modelBuilder.Entity("Catblog.Models.AdminKittys.Create", b =>
+                {
+                    b.Navigation("Image");
                 });
 #pragma warning restore 612, 618
         }

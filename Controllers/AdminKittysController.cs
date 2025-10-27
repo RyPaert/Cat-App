@@ -2,7 +2,7 @@
 using Catblog.Data;
 using Catblog.Dto;
 using Catblog.ServiceInterFace;
-using Catblog.Models.Kittys;
+using Catblog.Models.AdminKittys;
 
 
 
@@ -24,28 +24,29 @@ namespace Catblog.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            KittyCreateViewModel vm = new();
+            Create vm = new();
             return View("Create",vm);
         }
 
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(KittyCreateViewModel vm)
+        public async Task<IActionResult> Create(Create vm)
         {
             var dto = new KittyDto
             {
                 AdminCatName = vm.AdminCatName,
+                AdminCatTitle = vm.AdminCatTitle,
                 AdminCatSpecies = vm.AdminCatSpecies,
                 AdminCatAge = vm.AdminCatAge,
                 AdminCatGender = vm.AdminCatGender,
                 AdminCatDescription = vm.AdminCatDescription,
                 Files = vm.Files,
-                Image = vm.kittyImageViewModels.Select(x => new FileToDatabaseDto
+                Image = vm.Image.Select(x => new FileToDatabaseDto
                 {
-                    Id = x.ImageID,
+                    Id = x.Id,
                     ImageData = x.ImageData,
                     ImageTitle = x.ImageTitle,
-                    AdminCatID = x.KittyID,
+                    AdminCatID = x.Id,
 
                 }).ToArray()
             };
@@ -56,7 +57,7 @@ namespace Catblog.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                return RedirectToAction("Index", vm);
+                return RedirectToAction("Index","Home", vm);
             
         }
 

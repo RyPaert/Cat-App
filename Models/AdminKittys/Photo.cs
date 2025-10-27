@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Models.Kittys
+namespace Catblog.Models.AdminKittys
 {
-    public class KittyImageViewModel
+    public class Photo
     {
         [Key]
         public Guid ImageID { get; set; }

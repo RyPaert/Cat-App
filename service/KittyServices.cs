@@ -32,6 +32,7 @@ namespace Catblog.service
             kitty.AdminCatName = dto.AdminCatName;
             kitty.AdminCatAge = dto.AdminCatAge;
             kitty.AdminCatSpecies = dto.AdminCatSpecies;
+            kitty.AdminCatTitle = dto.AdminCatTitle;
 
             if (dto.Files != null)
             {

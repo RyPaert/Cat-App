@@ -4,6 +4,7 @@ using Catblog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catblog.Migrations
 {
     [DbContext(typeof(AdminCatContext))]
-    partial class AdminCatContextModelSnapshot : ModelSnapshot
+    [Migration("20251027114859_sdad")]
+    partial class sdad
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,10 +72,6 @@ namespace Catblog.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("AdminCatSpecies")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AdminCatTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -141,41 +140,9 @@ namespace Catblog.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AdminCatTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Create");
-                });
-
-            modelBuilder.Entity("Catblog.Models.AdminKittys.Photo", b =>
-                {
-                    b.Property<Guid>("ImageID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("ImageData")
-                        .IsRequired()
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("ImageTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("KittyID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ImageID");
-
-                    b.HasIndex("KittyID");
-
-                    b.ToTable("Photo");
                 });
 
             modelBuilder.Entity("Catblog.Domain.Kitty", b =>
@@ -194,18 +161,6 @@ namespace Catblog.Migrations
                     b.HasOne("Catblog.Models.AdminKittys.Create", null)
                         .WithMany("Image")
                         .HasForeignKey("CreateId");
-                });
-
-            modelBuilder.Entity("Catblog.Models.AdminKittys.Photo", b =>
-                {
-                    b.HasOne("Catblog.Domain.Kitty", null)
-                        .WithMany("Image")
-                        .HasForeignKey("KittyID");
-                });
-
-            modelBuilder.Entity("Catblog.Domain.Kitty", b =>
-                {
-                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("Catblog.Models.AdminKittys.Create", b =>
