@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using Catblog.Models.Accounts;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -73,6 +75,14 @@ namespace Catblog.Controllers.Accounts
                 await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme,
                     new ClaimsPrincipal(identity));
 
+                if (userModel.RememberMe == true)
+                {
+                    new AuthenticationProperties
+                    {
+                        IsPersistent = userModel.RememberMe,
+                        ExpiresUtc = DateTime.UtcNow.AddMinutes(1),
+                    };
+                }
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
             else
@@ -86,8 +96,9 @@ namespace Catblog.Controllers.Accounts
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction(nameof(HomeController.Index), "Home");
+
         }
     }
 }
