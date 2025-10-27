@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 ﻿using Catblog.Domain;
 using Microsoft.EntityFrameworkCore;
+using Catblog.Models.Comment;
 
 namespace Catblog.Data
 {
@@ -15,5 +16,6 @@ namespace Catblog.Data
 		public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<FileToDatabase> FileToDatabase { get; set; }
+		public DbSet<Comment> Comments { get; set; }
     }
 }

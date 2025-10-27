@@ -1,7 +1,7 @@
 ﻿using Catblog.Data;
 using Catblog.Domain;
 using Catblog.Dto;
-using Catblog.Models.Accounts;
+using Catblog.Models.Comment;
 using Catblog.ServiceInterface;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,6 +53,18 @@ namespace Catblog.Services
             await _context.SaveChangesAsync();
 
             return result;
+        }
+
+        public async Task<IEnumerable<Comment>> GetComment()
+        {
+            var comment = await _context.Comments.ToListAsync();
+            return comment;
+        }
+
+        public async Task AddComment(Comment comment)
+        {
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
         }
     }
 }

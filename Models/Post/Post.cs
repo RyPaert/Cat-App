@@ -1,5 +1,5 @@
 ﻿using Catblog.Models.Accounts;
-using Catblog.Models.Post;
+using Catblog.Models.Comment;
 using System.ComponentModel.DataAnnotations;
 
 namespace Catblog.Models.Post
@@ -25,7 +25,7 @@ namespace Catblog.Models.Post
         public string? Title { get; set; }
 
         public int Like { get; set; }
-
-        public User? User { get; set; }
+        //public Comment comment { get; set; }
+        public User User { get; set; }
     }
 }

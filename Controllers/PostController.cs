@@ -1,4 +1,5 @@
 ﻿using Catblog.Data;
+using Catblog.Models.Comment;
 using Catblog.Dto;
 using Catblog.Models.Post;
 using Catblog.ServiceInterface;
@@ -105,6 +106,22 @@ namespace Catblog.Controllers
             if (filmToDelete == null) { return RedirectToAction("Index", "Home"); }
 
             return RedirectToAction("Index", "Home");
+        }
+        [HttpGet]
+        public IActionResult AddComment()
+        {
+            var comments =  _postServices.GetComment();
+            return RedirectToAction("PostDetails", comments);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddComment(Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                await _postServices.AddComment(comment);
+                return RedirectToAction("PostDetails");
+            }
+            return View(comment);
         }
     }
 }
