@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 ﻿using Catblog.Domain;
 using Microsoft.EntityFrameworkCore;
-using Catblog.Models.Comment;
+using Catblog.Models.Comments;
 
 namespace Catblog.Data
 {

@@ -1,7 +1,7 @@
 ﻿using Catblog.Data;
 using Catblog.Domain;
 using Catblog.Dto;
-using Catblog.Models.Comment;
+using Catblog.Models.Comments;
 using Catblog.ServiceInterface;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,5 +1,5 @@
 ﻿using Catblog.Data;
-using Catblog.Models.Comment;
+using Catblog.Models.Comments;
 using Catblog.Dto;
 using Catblog.Models.Post;
 using Catblog.ServiceInterface;

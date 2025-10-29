@@ -1,5 +1,5 @@
 ﻿using Catblog.Domain;
-using Catblog.Models.Comment;
+using Catblog.Models.Comments;
 using Catblog.Dto;
 
 namespace Catblog.ServiceInterface
