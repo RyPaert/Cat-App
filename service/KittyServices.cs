@@ -32,14 +32,18 @@ namespace Catblog.service
             kitty.AdminCatName = dto.AdminCatName;
             kitty.AdminCatAge = dto.AdminCatAge;
             kitty.AdminCatSpecies = dto.AdminCatSpecies;
-            kitty.AdminCatTitle = dto.AdminCatTitle;
+            kitty.AdminCatRate = 1;
 
             if (dto.Files != null)
             {
                 _fileServices.UploadFilesToDatabase(dto, kitty);
             }
             await _catContext.Kitties.AddAsync(kitty);
-            await _catContext.SaveChangesAsync();
+            var result = await _catContext.SaveChangesAsync();
+            if (result == null)
+            {
+                return null;
+            }
 
             return kitty;
         }

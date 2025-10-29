@@ -2,7 +2,7 @@
 using Catblog.Data;
 using Catblog.Dto;
 using Catblog.ServiceInterFace;
-using Catblog.Models.AdminKittys;
+using Catblog.Domain;
 
 
 
@@ -21,34 +21,40 @@ namespace Catblog.Controllers
             _fileServices = fileServices;
         }
 
+        public async Task<IActionResult> Index()
+        {
+
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Create()
         {
-            Create vm = new();
+            Kitty vm = new();
             return View("Create",vm);
         }
 
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Create vm)
+        public async Task<IActionResult> Create(KittyDto vm)
         {
             var dto = new KittyDto
             {
                 AdminCatName = vm.AdminCatName,
-                AdminCatTitle = vm.AdminCatTitle,
                 AdminCatSpecies = vm.AdminCatSpecies,
                 AdminCatAge = vm.AdminCatAge,
                 AdminCatGender = vm.AdminCatGender,
                 AdminCatDescription = vm.AdminCatDescription,
+                AdminCatRate = vm.AdminCatRate,
                 Files = vm.Files,
-                Image = vm.Image.Select(x => new FileToDatabaseDto
-                {
-                    Id = x.Id,
-                    ImageData = x.ImageData,
-                    ImageTitle = x.ImageTitle,
-                    AdminCatID = x.Id,
+                //Image = vm.kittyImageViewModels.Select(x => new FileToDatabaseDto
+                //{
+                //    Id = x.ImageID,
+                //    ImageData = x.ImageData,
+                //    ImageTitle = x.ImageTitle,
+                //    AdminCatID = x.KittyID,
 
-                }).ToArray()
+                //}).ToArray()
             };
             var result = await _kittyServices.Create(dto);
 
@@ -57,7 +63,7 @@ namespace Catblog.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                return RedirectToAction("Index","Home", vm);
+                return RedirectToAction("Index", vm);
             
         }
 

@@ -1,11 +1,7 @@
 using System.Diagnostics;
-using AspNetCoreGeneratedDocument;
 using Catblog.Data;
-using Catblog.Domain;
 using Catblog.Models;
-using Catblog.Models.AdminKittys;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Catblog.Controllers
 {
@@ -19,33 +15,12 @@ namespace Catblog.Controllers
             _logger = logger;
             _catContext = adminCatContext;
         }
+
         public IActionResult Index()
         {
-            var resultingInventory = _catContext.Kitties
-                .Select(x => new Kitty
-                {
-                    Id = x.Id,
-                    AdminCatTitle = x.AdminCatTitle,
-                    AdminCatDescription = x.AdminCatDescription,
-                    AdminCatName = x.AdminCatName,
-                    AdminCatAge = x.AdminCatAge,
-                    AdminCatGender = x.AdminCatGender,
-                    AdminCatSpecies = x.AdminCatSpecies,
-                    Image = (List<Photo>)_catContext.FileToDatabase
-                       .Where(t => t.Id == x.Id)
-                       .Select(z => new Photo
-                       {
-                           ImageID = z.Id,
-                           KittyID = z.Id,
-                           ImageData = z.ImageData,
-                           ImageTitle = z.ImageTitle,
-                           Image = string.Format("data:image/gif;base64,{0}", Convert.ToBase64String(z.ImageData))
-                       })
-                });
-            return View(resultingInventory);
-
+            return View();
         }
-        
+
         public IActionResult Privacy()
         {
             return View();

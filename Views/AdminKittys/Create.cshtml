@@ -1,4 +1,4 @@
-﻿@model Catblog.Models.AdminKittys.Create
+﻿@model Catblog.Domain.Kitty
 
 ﻿@{
     ViewData["Title"] = "Add New Post";
@@ -21,7 +21,7 @@
         <label>Description</label>
         <textarea type="text" asp-for="AdminCatDescription" class="form-control"></textarea>
         <div class="form-group-row">
-            <label asp-for="Files" class="col-sm-2 col-form-label"></label>
+            @* <label asp-for="Files" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-5">
                 <div class="custom-file">
                     <input class="form-control custom-file-input"
@@ -29,7 +29,7 @@
                            multiple type="file" />
                     <label class="custom-file-label">Choose Images from device -></label>
                 </div>
-            </div>
+            </div> *@
         </div>
         <input asp-action="Create" asp-controller="AdminKittys" type="submit"
                class="btn btn-primary" value="Create" />
