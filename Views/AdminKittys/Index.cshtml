@@ -1,4 +1,4 @@
-﻿@model Catblog.Domain.Kitty
+﻿@model IEnumerable<Catblog.Domain.Kitty>
 @{
 	int rowNumber = 1;
 }
@@ -18,6 +18,32 @@
 			</tr>
 		</thead>
 		<tbody>
+			@foreach (var kitty in Model)
+			{
+				<tr>
+					<td>@rowNumber</td>
+					<td>
+						@if (kitty.Image != null && kitty.Image.Any())
+						{
+							var firstImage = kitty.Image.First();
+							var base64 = Convert.ToBase64String(firstImage.ImageData);
+							var imgSrc = $"data:image/png;base64,{base64}";
+							<img src="@imgSrc" alt="@firstImage.ImageTitle" width="100" height="100" class="rounded shadow-sm" />
+						}
+						else
+						{
+							<span class="text-muted">No image</span>
+						}
+					</td>
+					<td>@rowNumber</td>
+					<td>@kitty.AdminCatName</td>
+					<td>@kitty.AdminCatSpecies</td>
+					<td>@kitty.AdminCatAge</td>
+					<td>@kitty.AdminCatGender</td>
+					<td>@kitty.AdminCatDescription</td>
+				</tr>
+				
+			}
 		
 		</tbody>
 	</table>

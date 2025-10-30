@@ -3,6 +3,8 @@ using Catblog.Data;
 using Catblog.Dto;
 using Catblog.ServiceInterFace;
 using Catblog.Domain;
+using Microsoft.EntityFrameworkCore;
+using Catblog.Models.AdminKittys;
 
 
 
@@ -21,10 +23,11 @@ namespace Catblog.Controllers
             _fileServices = fileServices;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-
-            return View();
+            var result = await _catContext.Kitties.ToListAsync();
+            return View(result);                      
         }
 
         [HttpGet]
@@ -36,7 +39,7 @@ namespace Catblog.Controllers
 
         [HttpPost, ActionName("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(KittyDto vm)
+        public async Task<IActionResult> Create(KittyDto vm, Photo photo)
         {
             var dto = new KittyDto
             {
@@ -47,21 +50,21 @@ namespace Catblog.Controllers
                 AdminCatDescription = vm.AdminCatDescription,
                 AdminCatRate = vm.AdminCatRate,
                 Files = vm.Files,
-                //Image = vm.kittyImageViewModels.Select(x => new FileToDatabaseDto
-                //{
-                //    Id = x.ImageID,
-                //    ImageData = x.ImageData,
-                //    ImageTitle = x.ImageTitle,
-                //    AdminCatID = x.KittyID,
+                Image = vm.Image.Select(x => new FileToDatabaseDto
+                {
+                    Id = x.Id,
+                    ImageData = x.ImageData,
+                   ImageTitle = x.ImageTitle,
+                    AdminCatID = x.AdminCatID,
 
-                //}).ToArray()
+                }).ToArray()
             };
             var result = await _kittyServices.Create(dto);
 
 
                 if (result == null)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index");
                 }
                 return RedirectToAction("Index", vm);
             

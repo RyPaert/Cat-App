@@ -1,5 +1,7 @@
 ﻿
 
+using Catblog.Models.AdminKittys;
+
 namespace Catblog.Dto
 {
     public class KittyDto
@@ -12,9 +14,12 @@ namespace Catblog.Dto
         public string AdminCatDescription { get; set; }
         public int AdminCatRate { get; set; }
         //public KittyCreateViewModel createViewModel { get; set; }
+        public Photo photo { get; set; }
 
         public List<IFormFile> Files { get; set; }
         public IEnumerable<FileToDatabaseDto> Image {  get; set; } = new List<FileToDatabaseDto>();
+
+        
 
 
     }
