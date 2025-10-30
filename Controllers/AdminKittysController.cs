@@ -67,9 +67,31 @@ namespace Catblog.Controllers
                     return RedirectToAction("Index");
                 }
                 return RedirectToAction("Index", vm);
+           
             
         }
+        [HttpGet]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var delete = await _catContext.Kitties
+        .FirstOrDefaultAsync(x => x.Id == id);
 
+            if (delete == null)
+            {
+                return NotFound();
+            }
+            var vm = new Kitty
+            {
+                Id = delete.Id,
+                AdminCatName = delete.AdminCatName,
+                AdminCatSpecies = delete.AdminCatSpecies,
+                AdminCatAge = delete.AdminCatAge,
+                AdminCatGender = delete.AdminCatGender,
+                AdminCatDescription = delete.AdminCatDescription,
+                AdminCatRate = delete.AdminCatRate
+            };
+            return View(vm);
+        }
     };
 }
 

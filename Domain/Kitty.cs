@@ -17,8 +17,8 @@ namespace Catblog.Domain
         public int AdminCatRate { get; set; }
         //public KittyCreateViewModel kittyCreateViewModel { get; set; }
 
-        public List<byte[]> Files { get; set; }
-        public IEnumerable<FileToDatabaseDto> Image { get; set; } = new List<FileToDatabaseDto>();
+        public List<byte[]>? Files { get; set; }
+        public ICollection<FileToDatabaseDto> Image { get; set; } = new List<FileToDatabaseDto>();
 
         
     }

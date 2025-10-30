@@ -11,7 +11,7 @@ namespace Catblog.Data
         public DbSet<FileToDatabase> FileToDatabase { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Kitty>().ToTable("Kitty").HasNoKey();
+            modelBuilder.Entity<Kitty>().ToTable("Kitty").HasKey(k => k.Id);
             modelBuilder.Entity<FileToDatabase>().ToTable("FileToDatabase");
         }
     }
