@@ -65,6 +65,11 @@ html {
     background-color: #ffffffa7; 
     border-radius: 8px;
     height: 30%;
+    overflow-y:auto;
+}
+
+#more {
+    display: none;
 }
 
 .DescriptionArea .post-title {
