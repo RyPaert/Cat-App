@@ -84,6 +84,10 @@ html {
     color: #555;
     line-height: 1.5;
 }
+.DescriptionArea #more {
+    color: dimgrey;
+    line-height: 1.5;
+}
 
 .CommentArea {
     width: 100%;
