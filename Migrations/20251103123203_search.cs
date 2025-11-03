@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Catblog.Migrations
 {
     /// <inheritdoc />
-    public partial class start : Migration
+    public partial class search : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

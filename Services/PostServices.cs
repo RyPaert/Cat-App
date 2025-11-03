@@ -34,6 +34,7 @@ namespace Catblog.Services
             post.Age = dto.Age;
             post.Gender = dto.Gender;
             post.User = dto.User;
+            post.Like = dto.Like;
 
             if (dto.Files != null)
             {

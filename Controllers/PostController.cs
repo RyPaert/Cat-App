@@ -45,6 +45,7 @@ namespace Catblog.Controllers
                 Species = model.Species,
                 Gender = model.Gender,
                 Files = model.Files,
+                Like = model.Like,
                 Image = model.Image
                 .Select(x => new FileToDatabaseDto
                 {
