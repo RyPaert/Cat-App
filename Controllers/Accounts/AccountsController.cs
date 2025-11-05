@@ -72,18 +72,20 @@ namespace Catblog.Controllers.Accounts
                 var identity = new ClaimsIdentity(IdentityConstants.ApplicationScheme);
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
                 identity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
-                await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme,
-                    new ClaimsPrincipal(identity));
 
-                if (userModel.RememberMe == true)
+
+                var authProperties = new AuthenticationProperties
                 {
-                    new AuthenticationProperties
-                    {
-                        IsPersistent = userModel.RememberMe,
-                        ExpiresUtc = DateTime.UtcNow.AddMinutes(1),
-                    };
-                }
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                    IsPersistent = userModel.RememberMe,
+                    ExpiresUtc = userModel.RememberMe ? DateTime.UtcNow.AddMinutes(10) : (DateTime?)null
+
+                };
+				Console.WriteLine($"TEST LINE:\nREMEMBER ME IS {userModel.RememberMe}\nCURRENT TIME IS {DateTime.UtcNow}\n YOUR COOKIE WILL EXPIRE AT {authProperties.ExpiresUtc}");
+
+				await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme,
+	            new ClaimsPrincipal(identity), authProperties);
+
+				return RedirectToAction(nameof(HomeController.Index), "Home");
             }
             else
             {
@@ -96,7 +98,7 @@ namespace Catblog.Controllers.Accounts
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync();
             return RedirectToAction(nameof(HomeController.Index), "Home");
 
         }
