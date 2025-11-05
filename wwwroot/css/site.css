@@ -12,11 +12,168 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+#AddNewPostForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Post {
+    border: 4px;
+    border-color: dimgray;
+    text-align: center;
+    height: 650px;
+    width: 650px;
+    background-color: #f0d1a5;
+    border-radius: 4%;
+}
+#PostForm {
+    margin: auto;
+    width: 50%;
+    text-overflow: ellipsis;
+    max-width: 650px;
+}
+#PostForm a{
+    color:black;
+    text-decoration:none;
+}
+#PostDetails {
+    text-align:center;
+    margin: auto;
+    width: 50%;
+}
+
+#container {
+    display: flex;
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+.aboutus {
+    background: #CCC;
+    width: 80%;
+    overflow-block:auto;
+}
+
+.Catinfo {
+    background: #DDD;
+    width: 20%;
+}
+
+.DescriptionArea {
+    padding: 15px;
+    background-color: #ffffffa7; 
+    border-radius: 8px;
+    height: 30%;
+    overflow-y:auto;
+}
+
+#more {
+    display: none;
+}
+
+.DescriptionArea .post-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #222; 
+    margin-bottom: 8px; 
+}
+
+.DescriptionArea .post-description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+.DescriptionArea #more {
+    color: dimgrey;
+    line-height: 1.5;
+}
+
+.CommentArea {
+    width: 100%;
+    height: 50%;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #ffffffa7;
+}
+.CommentArea > div {
+    background: #fff;
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+.AddCommentArea {
+    height: 19%;
+}
+.AddCommentArea textarea{
+    width:100%;
+    height: 80%;
+}
+.LikeArea{
+    height: 5%;
+}
+#heart {
+    height: 48px; /* adjust to control the size */
+    margin-left: 20px;
+    margin-top: 10px;
+    aspect-ratio: 1;
+    --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+    mask-border: var(--_m);
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    background: black;
+}
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) {
+    #heart {
+        mask: radial-gradient(at 70% 31%, #000 29%, #0000 30%), radial-gradient(at 30% 31%, #000 29%, #0000 30%), conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    }
+}
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    height: 100%;
 }
 
 body {
   margin-bottom: 60px;
+}
+
+
+/*REGISTER PAGE*/ 
+
+.regButton {
+    background-color: rgb(0, 177, 255);
+    /*border-radius: 3px;*/
+    font-size:25px;
+    border-color: transparent;
+    color:white;
+}
+.register-background {
+    margin-top:25%;
+    margin-left:25%;
+    margin-right:25%;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+.register-login-body {
+    background-image: url(../lib/image/regback.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    height: 100%;
+    overflow-y: hidden;
+}
+.reg-login-form {
+    align-content:center;
+    padding-left: 33%;
+    padding-right: 30%;
+    font-family:Arial;
 }
