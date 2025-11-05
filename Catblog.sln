@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catblog", "Catblog.csproj", "{1EA3937A-511A-410C-B4C8-6128F302D0AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{3C194D65-8729-48AA-83EB-BE214BFAE336}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C194D65-8729-48AA-83EB-BE214BFAE336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C194D65-8729-48AA-83EB-BE214BFAE336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C194D65-8729-48AA-83EB-BE214BFAE336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C194D65-8729-48AA-83EB-BE214BFAE336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
