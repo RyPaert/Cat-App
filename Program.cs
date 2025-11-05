@@ -40,14 +40,17 @@ namespace Catblog
             }).AddEntityFrameworkStores<CatblogDb>()
             .AddDefaultTokenProviders();
 
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
+            builder.Services.ConfigureApplicationCookie(options =>
                 {
-                    options.Cookie.Name = "rememberMeCookie";
+                    options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
                     options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
                     options.SlidingExpiration = true;
                 });
-            builder.Services.AddScoped<CookieAuthenticationEvents>();
+
+            builder.Services.AddAntiforgery(options =>
+            {
+                options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+            });
 
 
             var app = builder.Build();
@@ -66,6 +69,7 @@ namespace Catblog
             app.UseRouting();
 
             app.UseCookiePolicy();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

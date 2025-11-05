@@ -175,12 +175,30 @@ body {
 
 .reg-login-form {
 
+.register-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 3% auto;
+    max-width: 80vh;
+    max-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.reg-login-form {
     align-content: center;
     padding-left: 33%;
     padding-right: 30%;
     font-family: Arial;
-    max-height:100vh;
+    max-height: 100vh;
 }
+
 .regButton {
     background-color: rgb(0, 177, 255);
     border-radius: 3px;
