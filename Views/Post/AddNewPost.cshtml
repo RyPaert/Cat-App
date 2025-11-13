@@ -11,17 +11,17 @@
 <div id="AddNewPostForm">
     <form method="post" asp-action="AddNewPost" enctype="multipart/form-data">
         <label>Name</label>
-        <input type="text" asp-for="Name" class="form-control" placeholder="Max" style="border: 2px solid; border-color:black;" />
+        <input id="test_NameLabel" type="text" asp-for="Name" class="form-control" placeholder="Max" style="border: 2px solid; border-color:black;" />
         <label>Species</label>
-        <input type="text" asp-for="Species" class="form-control" placeholder="Siiami kass" style="border: 2px solid; border-color:black;" />
+        <input id="test_SpeciesLabel" type="text" asp-for="Species" class="form-control" placeholder="Siiami kass" style="border: 2px solid; border-color:black;" />
         <label>Age</label>
-        <input type="number" asp-for="Age" class="form-control" placeholder="3" style="border: 2px solid; border-color:black;" />
+        <input id="test_AgeLabel" type="number" asp-for="Age" class="form-control" placeholder="3" style="border: 2px solid; border-color:black;" />
         <label>Gender</label>
-        <input type="text" asp-for="Gender" class="form-control" placeholder="Male" style="border: 2px solid; border-color:black;" />
+        <input id="test_GenderLabel" type="text" asp-for="Gender" class="form-control" placeholder="Male" style="border: 2px solid; border-color:black;" />
         <label>Title</label>
-        <input type="text" asp-for="Title" class="form-control" placeholder="My cut cat" style="border: 2px solid; border-color:black;" />
+        <input id="test_TitleLabel" type="text" asp-for="Title" class="form-control" placeholder="My cut cat" style="border: 2px solid; border-color:black;" />
         <label>Description</label>
-        <textarea type="text" asp-for="Description" class="form-control" style="resize: none; border: 2px solid; border-color:black;" placeholder="Enter you post description"></textarea>
+        <textarea id="test_Descriptionlabel" type="text" asp-for="Description" class="form-control" style="resize: none; border: 2px solid; border-color:black;" placeholder="Enter you post description"></textarea>
         <div class="form-group-row">
             <label asp-for="Files" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-5">
@@ -39,7 +39,7 @@
                 @ViewBag.ErrorMessage
             </div>
         }
-        <input asp-action="AddNewPost" asp-controller="Post" type="submit"
+        <input id="test_SubmitPostFormButton" asp-action="AddNewPost" asp-controller="Post" type="submit"
                class="btn btn-secondary" style="background-color:#ccaa91;" value="Post" />
         <a asp-controller="Home" asp-action="index" class="btn btn-secondary" style="background-color:#ccaa91;">Cancel</a>
     </form> 
