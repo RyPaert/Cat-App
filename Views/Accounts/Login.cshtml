@@ -10,14 +10,14 @@
 				<form asp-action="Login">
 					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 					<div class="form-group">
-						<input asp-for="UserName" class="form-control" placeholder="Username"/>
+						<input id="test_logIn_userName" asp-for="UserName" class="form-control" placeholder="Username"/>
 						<span asp-validation-for="UserName" class="text-danger"></span>
 					</div>
 
 					<br />
 
 					<div class="form-group">
-						<input asp-for="Password" class="form-control" placeholder="Password"/>
+						<input id="test_logIn_userPassword" asp-for="Password" class="form-control" placeholder="Password" />
 						<span asp-validation-for="Password" class="text-danger"></span>
 					</div>
 
@@ -27,7 +27,7 @@
 
 					<br />
 					<div class="form-group">
-						<input type="submit" value="Login" class="regButton" />
+						<input id="test_LogIn_Create" type="submit" value="Login" class="regButton" />
 					</div>
 				</form>
 			</div>
