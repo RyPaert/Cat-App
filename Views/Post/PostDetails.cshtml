@@ -17,10 +17,10 @@
 
     <section class="Catinfo">
         <section class="DescriptionArea">
-            <div class="post-title">
+            <div class="post-title" id="test_TitleInDetailsView">
                 @Html.DisplayFor(model => model.Title)
             </div>
-            <div class="post-description">
+            <div class="post-description" id="test_DescriptionInDetailsView">
                 @Html.DisplayFor(model => model.Description)
             </div>
             <a onclick="myFunction()" id="myBtn">
@@ -29,13 +29,21 @@
             <span id="dots">...</span><br />
             <span id="more">
                 <label>Name:</label>
-                @Html.DisplayFor(model => model.Name)<br />
+                <span id="test_NameOndetailsView">
+                    @Html.DisplayFor(model => model.Name)<br />
+                </span>
                 <label>Age:</label>
-                @Html.DisplayFor(model => model.Age)<br />
+                <span id="test_AgeOnDetailsView">
+                    @Html.DisplayFor(model => model.Age)<br />
+                </span>
                 <label>Gender:</label>
-                @Html.DisplayFor(model => model.Gender)<br />
+                <span id="test_GenderOnDetailsView">
+                    @Html.DisplayFor(model => model.Gender)<br />
+                </span>
                 <label>Species:</label>
-                @Html.DisplayFor(model => model.Species)<br />
+                <span id="test_SpeciesOnDetailsView">
+                    @Html.DisplayFor(model => model.Species)<br />
+                </span>
             </span>
         </section>
         <section class="CommentArea">
