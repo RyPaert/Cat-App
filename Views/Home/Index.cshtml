@@ -16,7 +16,7 @@
             @foreach (var post in Model)
             {
                 <td>
-                    <a id="test_post_details" asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
+                    <a  asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
                         <table id="Post">
                             <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
                             <tr>
