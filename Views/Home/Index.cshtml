@@ -16,7 +16,7 @@
             @foreach (var post in Model)
             {
                 <td>
-                    <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
+                    <a id="test_post_details" asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
                         <table id="Post">
                             <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
                             <tr>
@@ -75,7 +75,7 @@
                     @*Delete action*@
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <a asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-secondary" style="background-color:#ccaa91;margin-left: 87%; margin-top: 10px;">Delete</a>
+                    <a id="test_Delete_button" asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-secondary" style="background-color:#ccaa91;margin-left: 87%; margin-top: 10px;">Delete</a>
                     }
             </td>
                 rowNumber++;
