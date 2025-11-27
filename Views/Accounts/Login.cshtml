@@ -10,24 +10,24 @@
 				<form asp-action="Login">
 					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 					<div class="form-group">
-						<input asp-for="UserName" class="form-control" placeholder="Username"/>
+						<input asp-for="UserName" class="form-control" placeholder="Username" id="test_LoginUsername"/>
 						<span asp-validation-for="UserName" class="text-danger"></span>
 					</div>
 
 					<br />
 
 					<div class="form-group">
-						<input asp-for="Password" class="form-control" placeholder="Password"/>
+						<input asp-for="Password" class="form-control" placeholder="Password" id="test_LoginPassword"/>
 						<span asp-validation-for="Password" class="text-danger"></span>
 					</div>
 
 					<div class="form-group">
-						<input class="form-check input" asp-for="RememberMe" /> @Html.DisplayNameFor(Model => Model.RememberMe)
+						<input class="form-check input" asp-for="RememberMe" id="test_LoginRememberMe"/> @Html.DisplayNameFor(Model => Model.RememberMe)
 					</div>
 
 					<br />
 					<div class="form-group">
-						<input type="submit" value="Login" class="regButton" />
+						<input type="submit" value="Login" class="regButton" id="test_LoginSubmitForm"/>
 					</div>
 				</form>
 			</div>
