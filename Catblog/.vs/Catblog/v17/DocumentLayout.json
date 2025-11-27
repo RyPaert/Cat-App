@@ -1,7 +1,28 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Cat-App\\Catblog\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\testproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\testproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\macros\\imacros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\macros\\imacros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +30,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 13,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestBase.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
+              "RelativeDocumentMoniker": "TestProject\\TestBase.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
+              "RelativeToolTip": "TestProject\\TestBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T15:10:11.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MockIHostEnvironment.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
+              "RelativeDocumentMoniker": "TestProject\\Mock\\MockIHostEnvironment.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
+              "RelativeToolTip": "TestProject\\Mock\\MockIHostEnvironment.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T15:09:06.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestProject",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestProject.csproj",
+              "RelativeDocumentMoniker": "TestProject\\TestProject.csproj",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestProject.csproj",
+              "RelativeToolTip": "TestProject\\TestProject.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-27T15:07:27.805Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -50,6 +110,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PostTests.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
+              "RelativeDocumentMoniker": "TestProject\\PostTests.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
+              "RelativeToolTip": "TestProject\\PostTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T15:06:26.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IMacros.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Macros\\IMacros.cs",
+              "RelativeDocumentMoniker": "TestProject\\Macros\\IMacros.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Macros\\IMacros.cs",
+              "RelativeToolTip": "TestProject\\Macros\\IMacros.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T15:08:35.949Z",
+              "EditorCaption": ""
             }
           ]
         },

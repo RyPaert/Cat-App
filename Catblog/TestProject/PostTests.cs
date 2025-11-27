@@ -1,6 +1,6 @@
 namespace TestProject
 {
-    public class UnitTest1
+    public class PostTests
     {
         [Fact]
         public void Test1()
