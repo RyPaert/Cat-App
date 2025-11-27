@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catblog", "Catblog.csproj", "{1EA3937A-511A-410C-B4C8-6128F302D0AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catblog", "Catblog\Catblog.csproj", "{4F53A701-D991-45ED-BD6A-F8F766C13608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1EA3937A-511A-410C-B4C8-6128F302D0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F53A701-D991-45ED-BD6A-F8F766C13608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F53A701-D991-45ED-BD6A-F8F766C13608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F53A701-D991-45ED-BD6A-F8F766C13608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F53A701-D991-45ED-BD6A-F8F766C13608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {402DF7E2-DF6D-472A-A31F-9ADE3D32E10A}
+		SolutionGuid = {85152C9F-1435-4B87-9150-50A808421765}
 	EndGlobalSection
 EndGlobal
