@@ -18,7 +18,7 @@
                 <td>
                     <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
                         <table id="Post">
-                            <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
+                            <tr><td colspan="2" style="font-weight:bold;" id="Test_IndexTitle">@post.Title</td></tr>
                             <tr>
                                 <td colspan="2">
                                     @if (post.Image == null || !post.Image.Any())
@@ -35,7 +35,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="word-wrap: break-word; word-break: break-word; white-space: normal;">@post.Description</td>
+                                <td style="word-wrap: break-word; word-break: break-word; white-space: normal;" id="Test_IndexDescription">@post.Description</td>
                             </tr>
                         </table>
                         @*Like button*@
@@ -75,7 +75,7 @@
                     @*Delete action*@
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <a asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-secondary" style="background-color:#ccaa91;margin-left: 87%; margin-top: 10px;">Delete</a>
+                    <a asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-secondary" style="background-color:#ccaa91;margin-left: 87%; margin-top: 10px;" id="test_DeleteButton">Delete</a>
                     }
             </td>
                 rowNumber++;
