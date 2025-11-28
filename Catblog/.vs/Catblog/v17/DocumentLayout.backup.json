@@ -1,7 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Cat-App\\Catblog\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F53A701-D991-45ED-BD6A-F8F766C13608}|Catblog\\Catblog.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\catblog\\models\\post\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F53A701-D991-45ED-BD6A-F8F766C13608}|Catblog\\Catblog.csproj|solutionrelative:catblog\\models\\post\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,6 +59,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PostTests.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
+              "RelativeDocumentMoniker": "TestProject\\PostTests.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
+              "RelativeToolTip": "TestProject\\PostTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T15:06:26.787Z",
+              "EditorCaption": ""
             }
           ]
         },
@@ -74,6 +100,40 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "1002975b-731b-453b-9b25-03b9bc65f37e",
+        "Display": 0,
+        "X": 254,
+        "Y": 62,
+        "Width": 974,
+        "Height": 1028,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Models\\Post\\Post.cs",
+              "RelativeDocumentMoniker": "Catblog\\Models\\Post\\Post.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Models\\Post\\Post.cs",
+              "RelativeToolTip": "Catblog\\Models\\Post\\Post.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T06:38:13.406Z",
+              "EditorCaption": ""
             }
           ]
         }
