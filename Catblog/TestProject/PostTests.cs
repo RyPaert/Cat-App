@@ -37,6 +37,37 @@ namespace TestProject
 
             Assert.NotEqual(re1.Id, result.Id);
         }
+        [Fact]
+        public async Task ShouldNot_CreatePost_WhenAgeNegative()
+        {
+            //ülesseade
+            PostDto dto = new PostDto
+            {
+                Age = -10,
+                Name = "Test",
+            };
+
+            //tegevus
+            var result = await Svc<IPostServices>().AddNewPost(dto);
+
+            //kontrollimine
+            Assert.NotNull(result);
+            Assert.Equal(result.Age, 690);
+        }
+        [Fact]
+        public async Task ShouldHaveUniqueID_WhenPostCreated()
+        {
+            //ülesseadistus
+            PostDto dto1 = MockDataPost();
+            PostDto dto2 = MockDataPost();
+
+            //tegevus
+            var create1 = await Svc<IPostServices>().AddNewPost(dto1);
+            var create2 = await Svc<IPostServices>().AddNewPost(dto2);
+
+            //kontrollimine
+            Assert.NotEqual(create1.Id, create2.Id);
+        }
 
         private static PostDto MockDataPost()
         {
