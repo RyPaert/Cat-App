@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using TestProject.Macros;
 using TestProject.Mock;
 
@@ -28,7 +29,9 @@ namespace TestProject
         {
             services.AddScoped<IPostServices, PostServices>();
             services.AddScoped<IFileServices, FileServices>();
-            services.AddScoped<IWebHost, MockIHostEnvironment>();
+            services.AddSingleton<IHostEnvironment, MockIHostEnvironment>();
+            services.AddSingleton<IWebHostEnvironment>(sp =>
+            (IWebHostEnvironment)sp.GetRequiredService<IHostEnvironment>());
 
             services.AddDbContext<CatblogDb>(x =>
             {

@@ -7,11 +7,12 @@
       "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -72,27 +73,31 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAAwAkBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-12-03T14:07:06.664Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MockIHostEnvironment.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
+              "RelativeDocumentMoniker": "TestProject\\Mock\\MockIHostEnvironment.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
+              "RelativeToolTip": "TestProject\\Mock\\MockIHostEnvironment.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T15:41:11.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TestBase.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
               "RelativeDocumentMoniker": "TestProject\\TestBase.cs",
               "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
               "RelativeToolTip": "TestProject\\TestBase.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABMAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-03T14:06:40.438Z",
               "EditorCaption": ""
@@ -105,7 +110,7 @@
               "RelativeDocumentMoniker": "TestProject\\PostTests.cs",
               "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
               "RelativeToolTip": "TestProject\\PostTests.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwDsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T15:06:26.787Z",
               "EditorCaption": ""

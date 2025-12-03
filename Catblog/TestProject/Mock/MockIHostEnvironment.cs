@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
 
 namespace TestProject.Mock
 {
-    public class MockIHostEnvironment : IWebHost
+    public class MockIHostEnvironment : IHostEnvironment
     {
         public string EnvironmentName
         {
