@@ -9,7 +9,7 @@ using Microsoft.Extensions.FileProviders;
 
 namespace TestProject.Mock
 {
-    public class MockIHostEnvironment : IWebHost
+    public class MockIHostEnvironment : IWebHostEnvironment
     {
         public string EnvironmentName
         {
@@ -35,6 +35,9 @@ namespace TestProject.Mock
         public IFeatureCollection ServerFeatures => throw new NotImplementedException();
 
         public IServiceProvider Services => throw new NotImplementedException();
+
+        public string WebRootPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IFileProvider WebRootFileProvider { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void Dispose()
         {

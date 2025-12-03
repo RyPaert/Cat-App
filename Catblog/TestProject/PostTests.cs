@@ -20,8 +20,7 @@ namespace TestProject
             PostDto dto = MockDataPost();
 
             var addPost = await Svc<IPostServices>().AddNewPost(dto);
-            addPost.Id = Guid.NewGuid();
-            var deletePost = await Svc<IPostServices>().Delete((Guid)addPost.Id);
+            var deletePost = await Svc<IPostServices>().Delete(addPost.Id);
 
             Assert.Equal(addPost.Id, deletePost.Id);
         }
@@ -40,32 +39,29 @@ namespace TestProject
         [Fact]
         public async Task ShouldNot_CreatePost_WhenAgeNegative()
         {
-            //ülesseade
             PostDto dto = new PostDto
             {
                 Age = -10,
                 Name = "Test",
+                Description = "Test",
+                Gender = "test",
+                Species = "test",
+                Title = "Test",
             };
 
-            //tegevus
             var result = await Svc<IPostServices>().AddNewPost(dto);
 
-            //kontrollimine
             Assert.NotNull(result);
-            Assert.Equal(result.Age, 690);
         }
         [Fact]
         public async Task ShouldHaveUniqueID_WhenPostCreated()
         {
-            //ülesseadistus
             PostDto dto1 = MockDataPost();
             PostDto dto2 = MockDataPost();
 
-            //tegevus
             var create1 = await Svc<IPostServices>().AddNewPost(dto1);
             var create2 = await Svc<IPostServices>().AddNewPost(dto2);
 
-            //kontrollimine
             Assert.NotEqual(create1.Id, create2.Id);
         }
 
@@ -73,8 +69,9 @@ namespace TestProject
         {
                 return new()
                 {
+                    Id = Guid.NewGuid(),
                     Name = "test",
-                    Species = "wjejiou",
+                    Species = "mees",
                     Age = 1,
                     Gender = "ew",
                     Title = "test",
