@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -32,21 +28,8 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MockIHostEnvironment.cs",
-              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
-              "RelativeDocumentMoniker": "TestProject\\Mock\\MockIHostEnvironment.cs",
-              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
-              "RelativeToolTip": "TestProject\\Mock\\MockIHostEnvironment.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAA5wAsAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T14:46:40.941Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -55,14 +38,14 @@
               "RelativeDocumentMoniker": "TestProject\\PostTests.cs",
               "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
               "RelativeToolTip": "TestProject\\PostTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwFgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-03T13:50:07.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "TestBase.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
               "RelativeDocumentMoniker": "TestProject\\TestBase.cs",
