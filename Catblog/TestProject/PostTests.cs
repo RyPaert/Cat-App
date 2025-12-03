@@ -86,7 +86,7 @@ namespace TestProject
             var result1 = await Svc<IPostServices>().PostDetailsAsync(create1.Id);
             var result2 = await Svc<IPostServices>().PostDetailsAsync(create2.Id);
 
-            Assert.False(result1.Name == result2.Name);
+            Assert.NotEqual(result1.Name, result2.Name);
         }
         private static PostDto MockDataPost1()
         {
