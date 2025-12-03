@@ -64,6 +64,16 @@ namespace TestProject
 
             Assert.NotEqual(create1.Id, create2.Id);
         }
+        [Fact]
+        public async Task Should_GetDetailsData()
+        {
+            PostDto dto = MockDataPost();
+
+            var post = await Svc<IPostServices>().AddNewPost(dto);
+            var result = await Svc<IPostServices>().PostDetailsAsync(post.Id);
+
+            Assert.NotNull(result);
+        }
 
         private static PostDto MockDataPost()
         {
