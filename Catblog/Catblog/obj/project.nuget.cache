@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mDEi2Hufwc4=",
+  "dgSpecHash": "2H1m7wFNtcw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Catblog.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\Source\\Repos\\Cat-App\\Catblog\\Catblog\\Catblog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
