@@ -8,7 +8,7 @@ namespace TestProject
         [Fact]
         public async Task ShouldNot_AddEmptyPost_WhenPost()
         {
-            PostDto testDto = MockDataPost();
+            PostDto testDto = MockDataPost1();
 
             var result = await Svc<IPostServices>().AddNewPost(testDto);
 
@@ -17,7 +17,7 @@ namespace TestProject
         [Fact]
         public async Task Should_DeleteByIdPost_WhenDeletePost()
         {
-            PostDto dto = MockDataPost();
+            PostDto dto = MockDataPost1();
 
             var addPost = await Svc<IPostServices>().AddNewPost(dto);
             var deletePost = await Svc<IPostServices>().Delete(addPost.Id);
@@ -27,7 +27,7 @@ namespace TestProject
         [Fact]
         public async Task ShouldNot_DeleteByIdPost_DifferentPost()
         {
-            PostDto dto = MockDataPost();
+            PostDto dto = MockDataPost1();
 
             var re1 = await Svc<IPostServices>().AddNewPost(dto);
             var re2 = await Svc<IPostServices>().AddNewPost(dto);
@@ -56,8 +56,8 @@ namespace TestProject
         [Fact]
         public async Task ShouldHaveUniqueID_WhenPostCreated()
         {
-            PostDto dto1 = MockDataPost();
-            PostDto dto2 = MockDataPost();
+            PostDto dto1 = MockDataPost1();
+            PostDto dto2 = MockDataPost1();
 
             var create1 = await Svc<IPostServices>().AddNewPost(dto1);
             var create2 = await Svc<IPostServices>().AddNewPost(dto2);
@@ -67,7 +67,7 @@ namespace TestProject
         [Fact]
         public async Task Should_GetDetailsData()
         {
-            PostDto dto = MockDataPost();
+            PostDto dto = MockDataPost1();
 
             var post = await Svc<IPostServices>().AddNewPost(dto);
             var result = await Svc<IPostServices>().PostDetailsAsync(post.Id);
@@ -77,8 +77,8 @@ namespace TestProject
         [Fact]
         public async Task ShouldNot_GetWrongDetailsData()
         {
-            PostDto dto1 = MockDataPost();
-            PostDto dto2 = MockDataPost();
+            PostDto dto1 = MockDataPost1();
+            PostDto dto2 = MockDataPost2();
 
             var create1 = await Svc<IPostServices>().AddNewPost(dto1);
             var create2 = await Svc<IPostServices>().AddNewPost(dto2);
@@ -86,20 +86,33 @@ namespace TestProject
             var result1 = await Svc<IPostServices>().PostDetailsAsync(create1.Id);
             var result2 = await Svc<IPostServices>().PostDetailsAsync(create2.Id);
 
-            Assert.False(result1 == result2);
+            Assert.False(result1.Name == result2.Name);
         }
-        private static PostDto MockDataPost()
+        private static PostDto MockDataPost1()
         {
                 return new()
                 {
                     Id = Guid.NewGuid(),
-                    Name = "test",
-                    Species = "mees",
+                    Name = "Rex",
+                    Species = "kass",
                     Age = 1,
-                    Gender = "ew",
-                    Title = "test",
-                    Description = "test",
+                    Gender = "mees",
+                    Title = "minu kass",
+                    Description = "ta on kass",
                 };
+        }
+        private static PostDto MockDataPost2()
+        {
+            return new()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Max",
+                Species = "koer",
+                Age = 10,
+                Gender = "naine",
+                Title = "minu koer",
+                Description = "ta on koer",
+            };
         }
     }
 }
