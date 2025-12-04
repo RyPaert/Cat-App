@@ -145,35 +145,84 @@ body {
 }
 
 
-/*REGISTER PAGE*/ 
+/*REGISTER PAGE AND LOGIN PAGE*/
 
-.regButton {
-    background-color: rgb(0, 177, 255);
-    /*border-radius: 3px;*/
-    font-size:25px;
-    border-color: transparent;
-    color:white;
+.register-login-body {
+    background-image: url(../lib/image/regback.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
+
 .register-background {
-    margin-top:25%;
-    margin-left:25%;
-    margin-right:25%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+
+    margin:3% auto;
+    max-width:80vh;
+    max-height:80vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    border-radius: 5px;
+    padding: 10px;
+
+    background: rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.reg-login-form {
+
+.register-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 3% auto;
+    max-width: 80vh;
+    max-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     border-radius: 5px;
     padding: 10px;
     background: rgb(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
 }
-.register-login-body {
-    background-image: url(../lib/image/regback.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    height: 100%;
-    overflow-y: hidden;
-}
+
 .reg-login-form {
-    align-content:center;
+    align-content: center;
     padding-left: 33%;
     padding-right: 30%;
-    font-family:Arial;
+    font-family: Arial;
+    max-height: 100vh;
 }
+
+.regButton {
+    background-color: rgb(0, 177, 255);
+    border-radius: 3px;
+    font-size: 25px;
+    border-color: transparent;
+    color: white;
+}
+    .regButton:hover {
+        transform: scale(1.1);
+        background-color: rgb(91, 235, 255);
+        transition: background-color ease-in-out 0.4s, transform ease-in-out 0.3s;
+    }
+    .form-control:hover {
+        transform: scale(1.1);
+        transition: transform ease-in-out 0.2s;
+    }
+    .form-control:not(:hover) {
+        transform: scale(1);
+        transition: transform ease-in-out 0.2s;
+    }
+    .regButton:not(:hover) {
+        transform: scale(1);
+        background-color: rgb(0, 177, 255);
+        transition: background-color ease-in-out 0.4s, transform ease-in-out 0.3s;
+    }
+
+/*REGISTER PAGE AND LOGIN PAGE*/

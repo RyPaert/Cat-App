@@ -2,32 +2,32 @@
 
 <body class="register-login-body">
 	<div class="register-background">
-		<h1>Login</h1>
+		<h1 style="text-align:center">Login</h1>
 
 		<hr />
 		<div class="row">
-			<div class="col-md-4">
+			<div class="reg-login-form">
 				<form asp-action="Login">
 					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 					<div class="form-group">
-						<label asp-for="UserName" class="control-label">Username</label>
-						<input asp-for="UserName" class="form-control" />
+						<input asp-for="UserName" class="form-control" placeholder="Username" id="test_LoginUsername"/>
 						<span asp-validation-for="UserName" class="text-danger"></span>
 					</div>
 
+					<br />
+
 					<div class="form-group">
-						<label asp-for="Password" class="control-label"></label>
-						<input asp-for="Password" class="form-control" />
+						<input asp-for="Password" class="form-control" placeholder="Password" id="test_LoginPassword"/>
 						<span asp-validation-for="Password" class="text-danger"></span>
 					</div>
 
 					<div class="form-group">
-						<input class="form-check input" asp-for="RememberMe" /> @Html.DisplayNameFor(Model => Model.RememberMe)
+						<input class="form-check input" asp-for="RememberMe" id="test_LoginRememberMe"/> @Html.DisplayNameFor(Model => Model.RememberMe)
 					</div>
 
 					<br />
 					<div class="form-group">
-						<input type="submit" value="Login" class="regButton" />
+						<input type="submit" value="Login" class="regButton" id="test_LoginSubmitForm"/>
 					</div>
 				</form>
 			</div>

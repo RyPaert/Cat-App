@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Identity;
 using Catblog.Dto;
 using Catblog.ServiceInterface;
 using Catblog.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection;
+using Azure;
 
 namespace Catblog
 {
@@ -29,7 +32,7 @@ namespace Catblog
             {
                 opt.User.AllowedUserNameCharacters = string.Empty;
 
-                opt.Password.RequiredLength = 0; // Set to 8
+                opt.Password.RequiredLength = 0; // Set to 10
                 opt.Password.RequireDigit = false; // Set to True
                 opt.Password.RequireUppercase = false; // Set to True
                 opt.Password.RequireLowercase = false; // Set to True
@@ -37,7 +40,20 @@ namespace Catblog
             }).AddEntityFrameworkStores<CatblogDb>()
             .AddDefaultTokenProviders();
 
-			var app = builder.Build();
+            builder.Services.ConfigureApplicationCookie(options =>
+                {
+                    options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+                    options.SlidingExpiration = true;
+                });
+
+            builder.Services.AddAntiforgery(options =>
+            {
+                options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+            });
+
+
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -52,6 +68,8 @@ namespace Catblog
 
             app.UseRouting();
 
+            app.UseCookiePolicy();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

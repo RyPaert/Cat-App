@@ -1,12 +1,12 @@
 ﻿@model Catblog.Models.Post.Post
 
-<span id="container">
+<div id="container">
     <section class="aboutus">
         @foreach (var image in Model.Image)
         {
             @if (image.Image == null || !image.Image.Any())
             {
-                <img src="~/lib/image/Cat.jpg" alt="Default Image"/>
+                <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
             }
             else
             {
@@ -17,26 +17,12 @@
 
     <section class="Catinfo">
         <section class="DescriptionArea">
-            <div class="post-title">
+            <div class="post-title" id="Test_TitleInDetailsView">
                 @Html.DisplayFor(model => model.Title)
             </div>
-            <div class="post-description">
+            <div class="post-description" id="">
                 @Html.DisplayFor(model => model.Description)
             </div>
-            <a onclick="myFunction()" id="myBtn">
-                Show details about cat
-            </a>
-            <span id="dots">...</span><br />
-            <span id="more">
-                <label>Name:</label>
-                @Html.DisplayFor(model => model.Name)<br />
-                <label>Age:</label>
-                @Html.DisplayFor(model => model.Age)<br />
-                <label>Gender:</label>
-                @Html.DisplayFor(model => model.Gender)<br />
-                <label>Species:</label>
-                @Html.DisplayFor(model => model.Species)<br />
-            </span>
         </section>
         <section class="CommentArea">
             <div>Some more 1</div>
@@ -50,23 +36,5 @@
                 <textarea style="resize: none;"></textarea><br />
                 <button class="btn btn-secondary" style="width: 100%; height:24.5%">Add</button>
             </section>
-    </section>
-</span>
-@*See more script*@
-<script>
-    function myFunction() {
-      var dots = document.getElementById("dots");
-      var moreText = document.getElementById("more");
-      var btnText = document.getElementById("myBtn");
-
-      if (dots.style.display === "none") {
-        dots.style.display = "inline";
-        btnText.innerHTML = "Show details about cat";
-        moreText.style.display = "none";
-      } else {
-        dots.style.display = "none";
-        btnText.innerHTML = "Show less";
-        moreText.style.display = "inline";
-      }
-    }
-</script>
+        </section>
+    </div>      
