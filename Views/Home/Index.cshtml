@@ -1,8 +1,89 @@
-﻿@{
+﻿@model IEnumerable<Catblog.Models.Post.Post>
+@{
     ViewData["Title"] = "Home Page";
+}
+@{
+    int rowNumber = 1;
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <hr />
 </div>
+<form method="post" id="PostForm">
+    <table class="table">
+        <tbody>
+            @foreach (var post in Model)
+            {
+                <td>
+                    <a asp-action="PostDetails" asp-controller="Post" asp-route-id="@post.Id" class="btn_for_users">
+                        <table id="Post">
+                            <tr><td colspan="2" style="font-weight:bold;">@post.Title</td></tr>
+                            <tr>
+                                <td colspan="2">
+                                    @if (post.Image == null || !post.Image.Any())
+                                    {
+                                        <img src="~/lib/image/Cat.jpg" alt="Default Image" class="card-img-top" />
+                                    }
+                                    else
+                                    {
+                                        @foreach (var Image in post.Image)
+                                        {
+                                            <partial name="_ImageIndex" model="Image" style=""/>
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="word-wrap: break-word; word-break: break-word; white-space: normal;">@post.Description</td>
+                            </tr>
+                        </table>
+                        @*Like button*@
+                        @if (User.Identity.IsAuthenticated)
+                    {
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                @* Heart Button *@
+                                <a id="btn">
+                                    <div id="heart"></div>
+                                </a>
+
+                                @* Like Count *@
+                                <div id="like">@post.Like</div>
+                            </div>
+
+                            @*Script for like to change color and update count*@
+                            <script>
+                                let heart = document.getElementById('heart')
+                                let btn = document.getElementById('btn')
+                                var count = @post.Like
+                                btn.addEventListener('click', () => {
+                                if (heart.style.background == 'red')
+                                {
+                                    count -= 1;
+                                    document.getElementById('like').innerHTML = count;
+                                    heart.style.background = 'black'
+                                }
+                                else{
+                                    count+= 1;
+                                    document.getElementById("like").innerHTML = count;
+                                    heart.style.background = 'red'
+                                }                              
+                                })                               
+                            </script>                          
+                        }                  
+                    </a>
+                    @*Delete action*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <a asp-action="DeleteConfirmation" asp-controller="Post" asp-route-id="@post.Id" class="btn btn-secondary" style="background-color:#ccaa91;margin-left: 87%; margin-top: 10px;">Delete</a>
+                    }
+            </td>
+                rowNumber++;
+                if (rowNumber % 1 == 0)
+                {
+                <tr></tr>
+                }
+            }
+        </tbody>           
+    </table>
+</form>
