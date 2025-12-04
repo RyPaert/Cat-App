@@ -5,6 +5,7 @@ namespace TestProject
 {
     public class PostTests : TestBase
     {
+        //SERVICE
         [Fact]
         public async Task ShouldNot_AddEmptyPost_WhenPost()
         {
@@ -85,5 +86,43 @@ namespace TestProject
                     Description = "test",
                 };
         }
+        private static PostDto MockDataPost1()
+        {
+            return new()
+            {
+                Id = Guid.NewGuid(),
+                Name = "mihkel",
+                Species = "koer",
+                Age = 12,
+                Gender = "igav",
+                Title = "hehehe",
+                Description = "heheheh",
+            };
+        }
+        [Fact]
+        public async Task DetailsData()
+        {
+            PostDto dto1 = MockDataPost();
+
+            var create1 = await Svc<IPostServices>().AddNewPost(dto1);
+            var details = await Svc<IPostServices>().PostDetailsAsync(create1.Id);
+
+            Assert.NotNull(details);
+        }
+        public async Task DetailsDataWrong()
+        {
+            PostDto dto1 = MockDataPost();
+            PostDto dto2 = MockDataPost1();
+
+            var create1 = await Svc<IPostServices>().AddNewPost(dto1);
+            var create2 = await Svc<IPostServices>().AddNewPost(dto2);
+
+            var details = await Svc<IPostServices>().PostDetailsAsync(create1.Id);
+            var details2 = await Svc<IPostServices>().PostDetailsAsync(create2.Id);
+
+            Assert.NotEqual(details.Name, details2.Name);
+        }
+
+       
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Catblog.Controllers;
 using Catblog.Data;
 using Catblog.ServiceInterface;
 using Catblog.Services;
@@ -28,10 +29,10 @@ namespace TestProject
         public virtual void SetupServices(IServiceCollection services)
         {
             services.AddScoped<IPostServices, PostServices>();
+            services.AddScoped<PostController, PostController>();
             services.AddScoped<IFileServices, FileServices>();
             services.AddSingleton<IHostEnvironment, MockIHostEnvironment>();
-            services.AddSingleton<IWebHostEnvironment>(sp =>
-            (IWebHostEnvironment)sp.GetRequiredService<IHostEnvironment>());
+            services.AddSingleton<IWebHostEnvironment>(sp => (IWebHostEnvironment)sp.GetRequiredService<IHostEnvironment>());
 
             services.AddDbContext<CatblogDb>(x =>
             {

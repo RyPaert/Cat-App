@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\controllertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\controllertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\posttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|solutionrelative:testproject\\mock\\mockihostenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F53A701-D991-45ED-BD6A-F8F766C13608}|Catblog\\Catblog.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\catblog\\controllers\\accounts\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F53A701-D991-45ED-BD6A-F8F766C13608}|Catblog\\Catblog.csproj|solutionrelative:catblog\\controllers\\accounts\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F53A701-D991-45ED-BD6A-F8F766C13608}|Catblog\\Catblog.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\catblog\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F53A701-D991-45ED-BD6A-F8F766C13608}|Catblog\\Catblog.csproj|solutionrelative:catblog\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD4827F6-A486-4A16-B573-D7B1970D61D6}|TestProject\\TestProject.csproj|c:\\users\\opilane\\source\\repos\\cat-app\\catblog\\testproject\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,47 +81,73 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MockIHostEnvironment.cs",
-              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
-              "RelativeDocumentMoniker": "TestProject\\Mock\\MockIHostEnvironment.cs",
-              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\Mock\\MockIHostEnvironment.cs",
-              "RelativeToolTip": "TestProject\\Mock\\MockIHostEnvironment.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwAsAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Controllers\\Accounts\\AccountsController.cs",
+              "RelativeDocumentMoniker": "Catblog\\Controllers\\Accounts\\AccountsController.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Controllers\\Accounts\\AccountsController.cs",
+              "RelativeToolTip": "Catblog\\Controllers\\Accounts\\AccountsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T15:41:11.181Z",
+              "WhenOpened": "2025-12-04T13:47:50.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TestBase.cs",
-              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
-              "RelativeDocumentMoniker": "TestProject\\TestBase.cs",
-              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
-              "RelativeToolTip": "TestProject\\TestBase.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB4AAAA+AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "Catblog\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\Catblog\\Controllers\\PostController.cs",
+              "RelativeToolTip": "Catblog\\Controllers\\PostController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAIwGUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T14:06:40.438Z",
+              "WhenOpened": "2025-12-04T13:46:32.12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ControllerTest.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\ControllerTest.cs",
+              "RelativeDocumentMoniker": "TestProject\\ControllerTest.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\ControllerTest.cs*",
+              "RelativeToolTip": "TestProject\\ControllerTest.cs*",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwCEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T13:44:01.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TestBase.cs",
+              "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
+              "RelativeDocumentMoniker": "TestProject\\TestBase.cs",
+              "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\TestBase.cs",
+              "RelativeToolTip": "TestProject\\TestBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T13:44:00.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PostTests.cs",
               "DocumentMoniker": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
               "RelativeDocumentMoniker": "TestProject\\PostTests.cs",
               "ToolTip": "C:\\Users\\opilane\\source\\repos\\Cat-App\\Catblog\\TestProject\\PostTests.cs",
               "RelativeToolTip": "TestProject\\PostTests.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwDEAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T15:06:26.787Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         },

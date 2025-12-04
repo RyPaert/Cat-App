@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Catblog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6a2c952dc968627b1da07f8c8ee2e04daccc8c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cbde8b64f01753270e4ce06706e2615b7342d87")]
 [assembly: System.Reflection.AssemblyProductAttribute("Catblog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Catblog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
