@@ -164,3 +164,5 @@ C:\Users\opilane\source\repos\Cat-App\Catblog\TestProject\obj\Debug\net8.0\refin
 C:\Users\opilane\source\repos\Cat-App\Catblog\TestProject\obj\Debug\net8.0\TestProject.pdb
 C:\Users\opilane\source\repos\Cat-App\Catblog\TestProject\obj\Debug\net8.0\TestProject.genruntimeconfig.cache
 C:\Users\opilane\source\repos\Cat-App\Catblog\TestProject\obj\Debug\net8.0\ref\TestProject.dll
+C:\Users\opilane\source\repos\Cat-App\Catblog\TestProject\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\opilane\source\repos\Cat-App\Catblog\TestProject\bin\Debug\net8.0\Moq.dll

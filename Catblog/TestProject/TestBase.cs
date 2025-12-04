@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Catblog.Controllers;
 using Catblog.Data;
 using Catblog.ServiceInterface;
 using Catblog.Services;
@@ -28,6 +29,7 @@ namespace TestProject
         {
             services.AddScoped<IPostServices, PostServices>();
             services.AddScoped<IFileServices, FileServices>();
+            services.AddScoped<PostController, PostController>();
             services.AddSingleton<IHostEnvironment, MockIHostEnvironment>();
             services.AddSingleton<IWebHostEnvironment>(sp =>
                 (IWebHostEnvironment)sp.GetRequiredService<IHostEnvironment>());

@@ -65,7 +65,7 @@ namespace Catblog.Controllers
             return RedirectToAction("Index", "Home", model);
         }
         [HttpGet]
-        public async Task<IActionResult> PostDetails(Guid id, bool like)
+        public async Task<IActionResult> PostDetails(Guid id)
         {
             var post = await _postServices.PostDetailsAsync(id);
 

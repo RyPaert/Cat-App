@@ -1,9 +1,11 @@
+using Catblog.Controllers;
+using Catblog.Domain;
 using Catblog.Dto;
 using Catblog.ServiceInterface;
 
 namespace TestProject
 {
-    public class PostTests : TestBase
+    public class ServicesTests : TestBase
     {
         [Fact]
         public async Task ShouldNot_AddEmptyPost_WhenPost()
