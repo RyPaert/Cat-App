@@ -65,6 +65,11 @@ html {
     background-color: #ffffffa7; 
     border-radius: 8px;
     height: 30%;
+    overflow-y:auto;
+}
+
+#more {
+    display: none;
 }
 
 .DescriptionArea .post-title {
@@ -77,6 +82,10 @@ html {
 .DescriptionArea .post-description {
     font-size: 1em;
     color: #555;
+    line-height: 1.5;
+}
+.DescriptionArea #more {
+    color: dimgrey;
     line-height: 1.5;
 }
 
@@ -142,16 +151,54 @@ body {
     background-image: url(../lib/image/regback.png);
     background-repeat: no-repeat;
     background-size: cover;
-    /*overflow-y: hidden;*/ /* <--- if u want to hide scroll wheel enable this piece of shit*/
+    overflow: hidden;
 }
+
+.register-background {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+
+    margin:3% auto;
+    max-width:80vh;
+    max-height:80vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    border-radius: 5px;
+    padding: 10px;
+
+    background: rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
 .reg-login-form {
 
+.register-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 3% auto;
+    max-width: 80vh;
+    max-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.reg-login-form {
     align-content: center;
     padding-left: 33%;
     padding-right: 30%;
     font-family: Arial;
-    max-height:100vh;
+    max-height: 100vh;
 }
+
 .regButton {
     background-color: rgb(0, 177, 255);
     border-radius: 3px;
@@ -159,34 +206,23 @@ body {
     border-color: transparent;
     color: white;
 }
-.register-background {
-    margin-top:25%;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-bottom:25%;
-    border-radius: 5px;
-    padding: 10px;
-    background: rgb(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    transform:scale(100%);
-}
-.regButton:hover {
-    transform: scale(1.1);
-    background-color: rgb(91, 235, 255);
-    transition: background-color ease-in-out 0.4s, transform ease-in-out 0.3s;
-}
-.form-control:hover {
-    transform: scale(1.1);
-    transition: transform ease-in-out 0.2s;
-}
-.form-control:not(:hover) {
-    transform: scale(1);
-    transition: transform ease-in-out 0.2s;
-}
-.regButton:not(:hover) {
-    transform: scale(1);
-    background-color: rgb(0, 177, 255);
-    transition: background-color ease-in-out 0.4s, transform ease-in-out 0.3s;
-}
+    .regButton:hover {
+        transform: scale(1.1);
+        background-color: rgb(91, 235, 255);
+        transition: background-color ease-in-out 0.4s, transform ease-in-out 0.3s;
+    }
+    .form-control:hover {
+        transform: scale(1.1);
+        transition: transform ease-in-out 0.2s;
+    }
+    .form-control:not(:hover) {
+        transform: scale(1);
+        transition: transform ease-in-out 0.2s;
+    }
+    .regButton:not(:hover) {
+        transform: scale(1);
+        background-color: rgb(0, 177, 255);
+        transition: background-color ease-in-out 0.4s, transform ease-in-out 0.3s;
+    }
 
 /*REGISTER PAGE AND LOGIN PAGE*/

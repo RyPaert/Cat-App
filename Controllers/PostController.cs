@@ -1,5 +1,5 @@
 ﻿using Catblog.Data;
-using Catblog.Models.Comment;
+using Catblog.Models.Comments;
 using Catblog.Dto;
 using Catblog.Models.Post;
 using Catblog.ServiceInterface;
@@ -45,6 +45,7 @@ namespace Catblog.Controllers
                 Species = model.Species,
                 Gender = model.Gender,
                 Files = model.Files,
+                Like = model.Like,
                 Image = model.Image
                 .Select(x => new FileToDatabaseDto
                 {

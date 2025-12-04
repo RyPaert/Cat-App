@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Catblog.Models.Comment
+namespace Catblog.Models.Comments
 {
     public class Comment
     {

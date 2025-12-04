@@ -1,7 +1,7 @@
 ﻿using Catblog.Data;
 using Catblog.Domain;
 using Catblog.Dto;
-using Catblog.Models.Comment;
+using Catblog.Models.Comments;
 using Catblog.ServiceInterface;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +34,7 @@ namespace Catblog.Services
             post.Age = dto.Age;
             post.Gender = dto.Gender;
             post.User = dto.User;
+            post.Like = dto.Like;
 
             if (dto.Files != null)
             {
