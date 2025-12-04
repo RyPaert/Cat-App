@@ -65,7 +65,6 @@ namespace Catblog
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseDeveloperExceptionPage();
             app.UseRouting();
 
             app.UseCookiePolicy();
